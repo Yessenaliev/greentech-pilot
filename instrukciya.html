@@ -1,0 +1,287 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><title>Пилот в погребе: оснащение</title><style>html{-webkit-text-size-adjust:100%}body{margin:0;font:14px system-ui}img{max-width:100%}[hidden]{display:none!important}</style><style>
+.gtbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:6px;padding:8px max(12px,env(safe-area-inset-right,0px)) 8px max(12px,env(safe-area-inset-left,0px));padding-top:calc(8px + env(safe-area-inset-top,0px));background:#14232b;color:#fff;font:600 14px/1 "Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
+.gtbar a{flex:none;display:inline-flex;align-items:center;min-height:40px;padding:0 12px;border-radius:9px;color:#d7e3e8;text-decoration:none;border:1px solid transparent}
+.gtbar a:hover{border-color:#3d525c;color:#fff}
+.gtbar a[aria-current="page"]{background:#24404b;color:#fff}
+.gtbar a.gtback{background:#4fd1c5;color:#06231f;font-weight:700;margin-right:6px}
+.gtbar a:focus-visible{outline:3px solid #6cb6f5;outline-offset:2px}
+.gtfoot{max-width:1040px;margin:0 auto;padding:8px 16px 40px}
+.gtfoot a{display:inline-flex;align-items:center;min-height:46px;padding:0 18px;border-radius:10px;background:#14232b;color:#fff;text-decoration:none;font:700 15px "Golos Text",system-ui,sans-serif}
+@media print{.gtbar,.gtfoot{display:none}}
+</style></head><body><nav class="gtbar" aria-label="Страницы пилота"><a class="gtback" href="./" data-gtback>← Назад</a><a href="./">Шаги</a><a href="instrukciya.html" aria-current="page">Инструкция</a><a href="pokupki.html">Что докупить</a><a href="tz-elektriku.html">ТЗ электрику</a><a href="zakupka.html">Закупка и сборка</a><a href="spisok.html">Список закупки</a></nav><meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Раскладка: одна колонка-инструкция; сверху три ступени, дальше разделы по порядку работ; схемы и таблицы прокручиваются внутри себя */
+:root{
+  --bg:#f3f6f7; --surface:#ffffff; --ink:#14232b; --mut:#586a73; --line:#d3dde2;
+  --accent:#0f766e; --water:#1d6fb8; --warn:#b45309; --bad:#b3261e; --ok:#2e7d32; --soft:#e7eef0;
+  --font:"Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0e1619; --surface:#162126; --ink:#e6eef1; --mut:#93a4ad; --line:#2a3a41;
+  --accent:#4fd1c5; --water:#6cb6f5; --warn:#f0a44b; --bad:#f2776b; --ok:#7bd389; --soft:#1c2a30; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#0e1619; --surface:#162126; --ink:#e6eef1; --mut:#93a4ad; --line:#2a3a41;
+  --accent:#4fd1c5; --water:#6cb6f5; --warn:#f0a44b; --bad:#f2776b; --ok:#7bd389; --soft:#1c2a30; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.5 var(--font)}
+.wrap{max-width:1040px;margin:0 auto;padding-block:22px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:14px}
+.k{font:600 12px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+h1{font-size:clamp(26px,4.6vw,38px);line-height:1.1;margin:6px 0 4px;font-weight:700;text-wrap:balance}
+h2{font-size:21px;line-height:1.2;margin:22px 0 0;padding-top:16px;border-top:2px solid var(--ink);text-wrap:balance}
+h3{font-size:16px;margin:8px 0 0}
+p{margin:0;max-width:72ch}
+.mut{color:var(--mut)} .sm{font-size:13.5px}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.card b{font-size:16px}
+.card .st{font:600 12px var(--mono);color:var(--mut)}
+.tag{display:inline-block;font:600 11px/1.5 var(--mono);border-radius:5px;padding:0 6px;border:1px solid var(--line);color:var(--mut);white-space:nowrap}
+.tag.have{border-color:var(--ok);color:var(--ok)} .tag.buy{border-color:var(--water);color:var(--water)} .tag.later{border-color:var(--warn);color:var(--warn)}
+.note{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:6px;padding:10px 12px}
+.note.w{border-left-color:var(--bad)}
+.tw{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:13.5px}
+th{text-align:left;font:600 12px var(--mono);color:var(--mut);background:var(--soft);padding:8px 10px;border-bottom:1px solid var(--line)}
+td{padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.c{font:600 13px var(--mono);white-space:nowrap}
+ol,ul{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:6px;max-width:76ch}
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;flex:1 1 150px;min-width:0;display:flex;flex-direction:column;gap:3px;position:relative}
+.step b{font-size:14.5px} .step span{font-size:13px;color:var(--mut)}
+.step.opt{border-style:dashed}
+.step .n{font:600 11px var(--mono);color:var(--water)}
+.tree{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.fig{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow-x:auto}
+.fig svg{display:block;width:100%;min-width:600px;height:auto}
+svg text{font-family:var(--font);fill:var(--ink)}
+.s-wall{fill:none;stroke:var(--ink);stroke-width:4}
+.s-rack{fill:var(--soft);stroke:var(--accent);stroke-width:2}
+.s-div{stroke:var(--accent);stroke-width:1}
+.s-tank{fill:var(--soft);stroke:var(--water);stroke-width:2}
+.s-dash{fill:none;stroke:var(--mut);stroke-width:1.5;stroke-dasharray:6 4}
+.s-fov{fill:var(--ink);opacity:.09}
+.t-m{fill:var(--mut);font-size:11px}
+.m-air{fill:var(--accent)} .m-wat{fill:var(--water)} .m-leak{fill:var(--warn)} .m-cam{fill:var(--ink)} .m-net{fill:var(--mut)}
+.m-t{fill:var(--surface);font:600 10.5px var(--mono);text-anchor:middle}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;color:var(--mut)}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+a{color:var(--accent)}
+@media (max-width:760px){.grid3,.tree{grid-template-columns:1fr}}
+</style>
+
+<div class="wrap">
+<div>
+  <div class="k">GreenTech · пилот в погребе · редакция 20.11.2026</div>
+  <h1>Оснащение и запуск пилота</h1>
+  <p class="mut">Погреб 2,95 × 2,15 × 1,90 м · два одинаковых стеллажа по 3 секции, по 3 яруса · 10 ванн по 30 л и бак NFT 60 л. Здесь то, чего нет в документе для монтажников: вода и фильтры, датчики и камеры, электрика по группам, порядок запуска и первые данные.</p>
+</div>
+
+<div class="note">Сборку стеллажей, ванн, каналов, света и вытяжки монтажники делают по документу <a href="zakupka.html">«Гидроферма в погребе — закупка и схема сборки»</a>. Эта инструкция его не заменяет, а дополняет. Метки в таблицах: <span class="tag have">в закупке</span> уже есть в том документе, <span class="tag buy">докупить</span> нужно добавить, <span class="tag later">по результату</span> решаем после первых замеров.</div>
+
+<div class="note w"><b>Состояние на 20.11.2026, по видео.</b> Гидропонного оборудования в погребе ещё нет. Стеллаж с реечными полками собран, второй стоит каркасом без полок. Вытяжное колено на месте, вентилятора нет. Воздух: 18,4 °C и 50 %. Начинаем с шага 1.</div>
+
+<h2>Три ступени</h2>
+<div class="grid3">
+  <div class="card"><span class="st">СТУПЕНЬ 1 · с первого дня</span><b>Ручной контур</b><span>Всё меряется руками и вносится в приложение. Этого хватает, чтобы вырастить первый урожай и получить первые данные.</span><span class="sm mut">Тестер pH / EC / температура, термогигрометр, люксметр, два счётчика кВт·ч, весы, фото с телефона.</span></div>
+  <div class="card"><span class="st">СТУПЕНЬ 2 · после первой недели</span><b>Глаза и автозапись</b><span>Камеры и датчики, которые пишут сами: воздух, температура раствора, энергия, протечка.</span><span class="sm mut">Нужен Wi-Fi в погребе. Пока приложение принимает только ручной ввод.</span></div>
+  <div class="card"><span class="st">СТУПЕНЬ 3 · после первого цикла</span><b>Непрерывный pH и EC</b><span>Постоянные щупы и дозирование — только на баке NFT.</span><span class="sm mut">В десяти ваннах раствор не общий: вместе с баком одиннадцать отдельных объёмов. Ставить щупы в каждую ванну нет смысла, их меряют ручным тестером по графику.</span></div>
+</div>
+
+<h2>До монтажа: пять проверок</h2>
+<div class="tw"><table>
+<tr><th>Что проверить</th><th>Как</th><th>Зачем</th></tr>
+<tr><td><b>Вода</b></td><td>Расширенный анализ исходной воды по списку из 21 показателя</td><td>От него зависят фильтры и рецепт раствора</td></tr>
+<tr><td><b>Электролиния погреба</b></td><td>Электрик смотрит автомат, наличие УЗО, сечение кабеля</td><td>Полный свет даст около 1,1 кВт. В 16 А укладывается, но линию нужно знать</td></tr>
+<tr><td><b>Образец светильника</b></td><td>Купить один, замерить мощность счётчиком и освещённость в 6–9 точках полки на рабочей высоте</td><td>По расчёту в норму попадает только ярус А2. Сколько рядов добавить, решается до закупки остальных</td></tr>
+<tr><td><b>Wi-Fi в погребе</b></td><td>Есть. Осталось проверить скорость при закрытом люке</td><td>Без связи камеры и датчики ступени 2 не работают</td></tr>
+<tr><td><b>Куда сливать раствор</b></td><td>Слива в погребе нет. Измерить расстояние от люка до ближайшего слива в доме</td><td>По нему подбирается шланг и насос, см. раздел «Слив и откачка»</td></tr>
+</table></div>
+
+<h2>Вода и фильтры</h2>
+<p>Водопровод в погреб не заводим. Воду готовим в доме и спускаем канистрами: на долив уходит 6–9 л в сутки, на полную заправку — около 360 л.</p>
+<div class="flow">
+  <div class="step"><span class="n">1</span><b>Кран в доме</b><span>исходная вода, та же, что сдана на анализ</span></div>
+  <div class="step"><span class="n">2</span><b>Фильтр от взвеси</b><span>картридж 5–10 мкм: песок, ржавчина</span></div>
+  <div class="step"><span class="n">3</span><b>Угольный фильтр</b><span>убирает остаточный хлор</span></div>
+  <div class="step opt"><span class="n">4 · только по анализу</span><b>Обратный осмос</b><span>если высокие натрий, хлориды или бор</span></div>
+  <div class="step"><span class="n">5</span><b>Канистры 20 л</b><span>пищевые, непрозрачные, с крышкой; отстоять сутки</span></div>
+  <div class="step"><span class="n">6</span><b>Замес</b><span>удобрение, затем pH; замер EC и pH до заливки</span></div>
+  <div class="step"><span class="n">7</span><b>Ванны и бак</b><span>долив раз в 2–3 дня, записать литры</span></div>
+</div>
+<h3>Какой фильтр нужен — решает анализ</h3>
+<div class="tw"><table>
+<tr><th>Что покажет анализ</th><th>Что ставим</th></tr>
+<tr><td>Остаточный хлор от 0,5 мг/л</td><td>Угольный фильтр обязателен. Если общий хлор заметно выше свободного, отстаивание не поможет — только уголь</td></tr>
+<tr><td>Железо выше 0,3 мг/л или мутная вода</td><td>Фильтр от взвеси обязателен; при железе выше 1 мг/л — обезжелезивающий картридж</td></tr>
+<tr><td>Натрий выше 50, хлориды выше 70–140 или бор выше 0,5 мг/л</td><td>Обратный осмос. Эти вещества не убрать ничем другим, а в ваннах они копятся</td></tr>
+<tr><td>Щёлочность выше 3,2 мг-экв/л, жёсткая вода</td><td>Фильтр не нужен: больше кислоты на pH и поправка рецепта. Выше 8 мг-экв/л — осмос</td></tr>
+<tr><td>Всё в пределах</td><td>Хватит фильтра от взвеси и угольного, либо только отстаивания</td></tr>
+</table></div>
+<h3>Фильтры в самой системе</h3>
+<ul>
+  <li><b>Сетка на возврате NFT</b> перед баком — ловит корни и крошки минваты. Мыть раз в неделю.</li>
+  <li><b>Губка или сетка на всасе насоса</b> — чтобы насос не забило.</li>
+  <li><b>В ваннах DWC фильтров нет.</b> Чистоту держат непрозрачные стенки, крышка-плот и смена раствора.</li>
+</ul>
+
+<h2>Слив и откачка</h2>
+<p>Слива в погребе нет, поэтому отработанный раствор откачиваем насосом наверх, в канализацию дома.</p>
+<ul>
+  <li><b>Насос.</b> Отдельный погружной с напором не меньше 5 м: подъём из погреба до слива в доме — около 3–3,5 м, плюс потери в шланге. Насос NFT подбирался под подъём 1,5 м, его может не хватить.</li>
+  <li><b>Шланг</b> 12–16 мм от ванны через люк до ближайшего слива в доме. Длину измерить по месту.</li>
+  <li><b>Меняем не всё сразу.</b> Ванну — когда собрана её партия, это 30 л за раз. Бак NFT — раз в 3–4 недели, 60 л. Сливать 360 л разом не придётся.</li>
+  <li><b>Зимой — только в канализацию:</b> шланг на улице замёрзнет. Летом раствор можно вылить на газон или грядки.</li>
+  <li><b>Тот же насос — аварийный.</b> Если ванна потечёт, воду с пола погреба больше некуда деть. Держать его в погребе собранным со шлангом.</li>
+</ul>
+
+<h2>Датчики и камеры: что и где</h2>
+<div class="fig">
+<svg viewBox="0 0 640 450" role="img" aria-label="План погреба с местами датчиков и камер">
+  <rect class="s-wall" x="50" y="40" width="502" height="366"></rect>
+  <rect class="s-rack" x="52" y="42" width="366" height="102"></rect><line class="s-div" x1="175" y1="42" x2="175" y2="144"></line><line class="s-div" x1="296" y1="42" x2="296" y2="144"></line>
+  <text class="t-m" x="485" y="92" text-anchor="middle">канистры, работа</text>
+  <text x="235" y="70" text-anchor="middle" font-size="13" font-weight="600">Стеллаж А</text>
+  <text class="t-m" x="235" y="86" text-anchor="middle">А1 ванны · А2 ванны · А3 рассада</text>
+  <rect class="s-tank" x="424" y="322" width="119" height="80" rx="6"></rect>
+  <text x="483" y="344" text-anchor="middle" font-size="12" font-weight="600">бак 60 л</text>
+  <text class="t-m" x="408" y="286" text-anchor="end">полка с щитком — на стене над баком</text>
+  <rect class="s-rack" x="52" y="302" width="366" height="102"></rect><line class="s-div" x1="175" y1="302" x2="175" y2="404"></line><line class="s-div" x1="296" y1="302" x2="296" y2="404"></line>
+  <text x="235" y="382" text-anchor="middle" font-size="13" font-weight="600">Стеллаж Б</text>
+  <text class="t-m" x="235" y="396" text-anchor="middle">Б1 лук, укроп · Б2 трубы NFT · Б3 микрозелень</text>
+  <rect class="s-dash" x="420" y="170" width="125" height="120"></rect><text class="t-m" x="482" y="238" text-anchor="middle">люк и лестница</text>
+  <circle class="s-dash" cx="66" cy="165" r="11"></circle><text class="t-m" x="82" y="190">вытяжка Ø 110</text>
+  <text class="t-m" x="301" y="430" text-anchor="middle">2 950 мм</text><text class="t-m" x="34" y="223" transform="rotate(-90 34 223)" text-anchor="middle">2 150 мм</text>
+  <!-- поля обзора камер -->
+  <path class="s-fov" d="M538 60 L120 150 L120 300 Z"></path>
+  <path class="s-fov" d="M410 54 L60 44 L60 140 Z"></path>
+  <path class="s-fov" d="M410 316 L60 304 L60 400 Z"></path>
+  <!-- воздух -->
+  <circle class="m-air" cx="200" cy="165" r="12"></circle><text class="m-t" x="200" y="169">T1</text>
+  <circle class="m-air" cx="330" cy="330" r="12"></circle><text class="m-t" x="330" y="334">T2</text>
+  <!-- раствор -->
+  <circle class="m-wat" cx="110" cy="112" r="12"></circle><text class="m-t" x="110" y="116">W1</text>
+  <circle class="m-wat" cx="110" cy="340" r="12"></circle><text class="m-t" x="110" y="344">W2</text>
+  <circle class="m-wat" cx="448" cy="378" r="12"></circle><text class="m-t" x="448" y="382">W3</text>
+  <circle class="m-wat" cx="518" cy="378" r="12"></circle><text class="m-t" x="518" y="382">П</text>
+  <!-- протечка -->
+  <circle class="m-leak" cx="483" cy="378" r="12"></circle><text class="m-t" x="483" y="382">L1</text>
+  <circle class="m-leak" cx="262" cy="158" r="12"></circle><text class="m-t" x="262" y="162">L2</text>
+  <circle class="m-leak" cx="120" cy="288" r="12"></circle><text class="m-t" x="120" y="292">L3</text>
+  <!-- камеры -->
+  <circle class="m-cam" cx="538" cy="60" r="12"></circle><text class="m-t" x="538" y="64">K1</text>
+  <circle class="m-cam" cx="410" cy="54" r="12"></circle><text class="m-t" x="410" y="58">K2</text>
+  <circle class="m-cam" cx="410" cy="316" r="12"></circle><text class="m-t" x="410" y="320">K3</text>
+  <!-- сеть и щит -->
+  <circle class="m-net" cx="520" cy="188" r="12"></circle><text class="m-t" x="520" y="192">R</text>
+  <circle class="m-net" cx="492" cy="304" r="12"></circle><text class="m-t" x="492" y="308">Щ</text>
+</svg>
+</div>
+<div class="note"><b>Изменения 20.11.2026.</b> Стеллажи одинаковые: оба по три секции, до края лестницы. Бак стоит на стороне стеллажа Б, в свободном углу у лестницы; трубы NFT — на среднем ярусе стеллажа Б, в двух секциях у бака. Ванн 10: по три на нижнем и среднем ярусах А, три на нижнем ярусе Б и одна в третьей секции среднего яруса Б. Угол у стеллажа А — под канистры и работу с раствором.</div>
+<div class="legend"><span><i class="dot" style="background:var(--accent)"></i>воздух</span><span><i class="dot" style="background:var(--water)"></i>раствор</span><span><i class="dot" style="background:var(--warn)"></i>протечка</span><span><i class="dot" style="background:var(--ink)"></i>камера и её обзор</span><span><i class="dot" style="background:var(--mut)"></i>связь и питание</span></div>
+
+<div class="tw"><table>
+<tr><th>Метка</th><th>Что это</th><th>Где ставить</th><th>Ступень</th><th></th></tr>
+<tr><td class="c">T1</td><td>Термогигрометр Xiaomi с часами</td><td>В проходе на стойке стеллажа А, высота 1,0 м — на уровне среднего яруса. Не под светильником и не у вытяжки</td><td class="c">1</td><td><span class="tag have">есть</span></td></tr>
+<tr><td class="c">T2</td><td>Второй термогигрометр с памятью мин/макс</td><td>Стеллаж Б, верхний ярус, 1,4 м, со стороны лестницы. Вверху теплее: разница с T1 покажет перегрев от света</td><td class="c">1</td><td><span class="tag buy">докупить</span></td></tr>
+<tr><td class="c">—</td><td>Ручной тестер pH / EC / температура и калибровочные растворы</td><td>Хранить на полке у бака. Мерить в каждой ванне и в баке</td><td class="c">1</td><td><span class="tag have">в закупке</span></td></tr>
+<tr><td class="c">W1–W3</td><td>Термометр с выносным щупом в растворе</td><td>W1 — ванна нижнего яруса А1; W2 — ванна нижнего яруса Б1; W3 — бак NFT</td><td class="c">1</td><td><span class="tag buy">докупить</span></td></tr>
+<tr><td class="c">П</td><td>Поплавок низкого уровня в баке NFT</td><td>В баке, отключает насос, если раствора мало. Подключает электрик</td><td class="c">1</td><td><span class="tag buy">докупить</span></td></tr>
+<tr><td class="c">L1–L3</td><td>Датчик протечки</td><td>L1 — в поддоне бака; L2 — пол под стеллажом А; L3 — пол под стеллажом Б, где трубы и четыре ванны</td><td class="c">1</td><td><span class="tag have">2 в закупке</span> <span class="tag buy">+1</span></td></tr>
+<tr><td class="c">—</td><td>Люксметр-прибор</td><td>Замер в 6–9 точках каждой полки на высоте листьев. Телефон даёт слишком грубую цифру</td><td class="c">1</td><td><span class="tag buy">докупить</span></td></tr>
+<tr><td class="c">Щ</td><td>Два счётчика кВт·ч</td><td>На полке у щита: один на весь свет, второй на всё остальное</td><td class="c">1</td><td><span class="tag have">в закупке</span></td></tr>
+<tr><td class="c">R</td><td>Усилитель Wi-Fi</td><td>У люка, на стене под потолком. Wi-Fi в погребе есть; усилитель нужен, только если камера будет терять связь</td><td class="c">2</td><td><span class="tag later">по результату</span></td></tr>
+<tr><td class="c">K1</td><td>Обзорная камера</td><td>Угол у лестницы над стеллажом А, высота 1,7 м, смотрит через проход на оба стеллажа</td><td class="c">2</td><td><span class="tag buy">докупить</span></td></tr>
+<tr><td class="c">K2, K3</td><td>Камеры ярусов</td><td>K2 — торец стеллажа А со стороны лестницы, на уровне среднего яруса. K3 — торец стеллажа Б у бака, на уровне яруса с трубами NFT. Сначала ставим одну и смотрим, что видно между ярусами</td><td class="c">2</td><td><span class="tag later">по результату</span></td></tr>
+<tr><td class="c">—</td><td>Розетки Wi-Fi с учётом энергии</td><td>Вместо механических таймеров и счётчиков: сами пишут кВт·ч и время работы света</td><td class="c">2</td><td><span class="tag later">по результату</span></td></tr>
+<tr><td class="c">—</td><td>Постоянные щупы pH и EC, дозаторы</td><td>Только бак NFT</td><td class="c">3</td><td><span class="tag later">по результату</span></td></tr>
+</table></div>
+<p class="sm mut"><b>Требования к камере.</b> Wi-Fi, широкий угол, питание 5 В от USB, корпус для влажного помещения. Главное — доступ к снимкам по расписанию без облака производителя, иначе приложение потом не сможет их забирать. Ночная подсветка не нужна: снимаем при включённом свете, четыре раза в сутки.</p>
+<p class="sm mut"><b>Что не покупаем на пилот.</b> Датчик кислорода в растворе — дорогой; кислород держим косвенно: компрессоры работают, раствор не теплее 22 °C. Датчик CO₂ — газ не подаём, мерить нечего.</p>
+
+<h2>Электрика по группам</h2>
+<p>Для электрика есть отдельное задание без лишних подробностей: <a href="tz-elektriku.html">«ТЗ электрику: погреб»</a>.</p>
+<div class="note w"><b>Работу с линией делает электрик.</b> В погребе сыро: вся линия идёт через дифавтомат 16 А, 30 мА; розетки и удлинители — на стене не ниже 1 м от пола; кабель перед розеткой делает петлю вниз, чтобы вода не стекла по нему в розетку; на полу нет ничего электрического.</div>
+<div class="flow">
+  <div class="step"><span class="n">ввод</span><b>Линия погреба 16 А</b><span>автомат, УЗО и сечение — проверить</span></div>
+  <div class="step"><span class="n">защита</span><b>Дифавтомат 16 А, 30 мА</b><span>в боксе IP65 на полке «Щ»</span></div>
+</div>
+<div class="tree">
+  <div class="card"><span class="st">ГРУППА 1 · через счётчик № 1</span><b>Свет</b><span>Таймер 1: светильники стеллажа А и вытяжка. Таймер 2: светильники стеллажа Б. Свет 16 часов, темнота 8.</span><span class="sm mut">0,7 кВт на запуске, около 1,1 кВт при полном свете.</span></div>
+  <div class="card"><span class="st">ГРУППА 2 · через ИБП</span><b>Жизнеобеспечение</b><span>Насос NFT и пять компрессоров. Никогда не на таймере: работают круглые сутки и не меньше часа без сети.</span><span class="sm mut">Около 50 Вт.</span></div>
+  <div class="card"><span class="st">ГРУППА 3 · через счётчик № 2</span><b>Постоянные</b><span>Два вентилятора перемешивания, камеры, усилитель Wi-Fi, зарядки датчиков. Сюда же включён ИБП группы 2.</span><span class="sm mut">Счётчик № 2 показывает всё, кроме света.</span></div>
+</div>
+
+<h2>Порядок запуска</h2>
+<div class="tw"><table>
+<tr><th>Шаг</th><th>Что делаем</th><th>Что получаем</th></tr>
+<tr><td class="c">1</td><td>Пять проверок до монтажа. В тот же день сеем рассаду наверху, в доме: ей нужно 12–17 дней</td><td>Анализ воды, данные линии, замер образца светильника</td></tr>
+<tr><td class="c">2</td><td>Сборка по документу для монтажников</td><td>Стеллажи, ванны, каналы, свет, вытяжка</td></tr>
+<tr><td class="c">3</td><td>Проверка на воде 48 часов: протечек нет, расход в каждом канале 1–2 л/мин, от ИБП насос и компрессоры работают</td><td>Система держит воду</td></tr>
+<tr><td class="c">4</td><td>Ставим датчики ступени 1, калибруем тестер</td><td>Есть чем мерить</td></tr>
+<tr><td class="c">5</td><td><b>Прогон без растений, не меньше трёх суток.</b> Вода в ваннах, свет по таймеру, вытяжка работает. Утром и вечером записываем воздух (T1, T2, мин/макс) и температуру воды (W1–W3)</td><td>Первые данные: насколько свет греет погреб и воду. По ним решаем, нужны ли нагреватель, осушитель или сильнее вытяжка</td></tr>
+<tr><td class="c">6</td><td>Замес раствора по анализу воды, посадка рассады</td><td>Первая партия</td></tr>
+<tr><td class="c">7</td><td>Ежедневный протокол (ниже). Первые две недели — все одиннадцать объёмов каждый день</td><td>Понятно, как быстро уходят pH и EC в ванне 30 л</td></tr>
+<tr><td class="c">8</td><td>Через неделю работы со светом — решение по камерам и ступени 2</td><td>Состав «глаз»</td></tr>
+</table></div>
+
+<h2>Первые данные: что записывать</h2>
+<div class="tw"><table>
+<tr><th>Когда</th><th>Что</th><th>Чем</th><th>Норма</th><th>Куда в приложении</th></tr>
+<tr><td rowspan="5"><b>Каждый день</b>, в одно время</td><td>Воздух: сейчас, минимум и максимум за сутки</td><td>T1, T2</td><td class="num">днём 20–22 °C, ночью 17–18 °C, 60–70 %</td><td>Пилот → «Ввод»</td></tr>
+<tr><td>Раствор: pH, EC, температура</td><td>тестер, W1–W3</td><td class="num">pH 5,8–6,2 · EC 1,2–1,8 · 18–22 °C</td><td>Пилот → «Ввод»</td></tr>
+<tr><td>Долив воды и добавки: литры, миллилитры</td><td>мерный кувшин, шприц</td><td>—</td><td>Пилот → «Ввод», заметка к замеру</td></tr>
+<tr><td>Показания двух счётчиков кВт·ч</td><td>счётчики</td><td>—</td><td>Пилот → «Свет»</td></tr>
+<tr><td>Фото каждого яруса с одной и той же точки</td><td>телефон</td><td>—</td><td>пока в отдельную папку: зона и дата в имени</td></tr>
+<tr><td rowspan="4"><b>Раз в неделю</b></td><td>Освещённость в 6–9 точках каждой полки</td><td>люксметр</td><td class="num">17–20 тыс. лк на салате</td><td>Пилот → «Свет»</td></tr>
+<tr><td>Расход в каждом канале NFT</td><td>мерная кружка, минута</td><td class="num">1–2 л/мин</td><td>Пилот → «Ввод», заметка</td></tr>
+<tr><td>Проверка тестера по калибровочным растворам</td><td>pH 4,01 и 6,86; EC 1 413</td><td>—</td><td>Пилот → «Ввод», заметка</td></tr>
+<tr><td>Три помеченных растения в ванне: число листьев, диаметр</td><td>линейка</td><td>—</td><td>заметка к партии</td></tr>
+<tr><td><b>По партии</b></td><td>Даты посева, пересадки и сбора; вес каждой головки; потери; краевой ожог</td><td>весы 1 г</td><td>—</td><td>партии пилота</td></tr>
+<tr><td><b>Сразу</b></td><td>Любое событие: отключение света, протечка, сработал поплавок, что-то увяло</td><td>—</td><td>—</td><td>заметка к замеру</td></tr>
+</table></div>
+<p class="sm mut">Записи вносите в рабочей версии приложения, где журнал общий. На публичном сайте записи остаются только на том устройстве, с которого внесены.</p>
+
+<h2>Докупить к действующей закупке</h2>
+<p>Тот же список с рисунками и с тем, чем обойтись, пока вещи нет: <a href="pokupki.html">«Пилот: что докупить»</a>.</p>
+<div class="tw"><table>
+<tr><th>Позиция</th><th>Требования</th><th>Кол-во</th></tr>
+<tr><td>Канистра пищевая с крышкой</td><td>20 л, непрозрачная</td><td class="c">2–3</td></tr>
+<tr><td>Фильтр от взвеси и угольный</td><td>колба с картриджами на кран или под мойку; состав — после анализа</td><td class="c">1 к-т</td></tr>
+<tr><td>Насос для откачки</td><td>погружной, напор не меньше 5 м, под шланг 12–16 мм</td><td class="c">1</td></tr>
+<tr><td>Шланг для слива</td><td>от ванны через люк до слива в доме</td><td class="c">по месту</td></tr>
+<tr><td>Сетка на возврат NFT</td><td>ячейка 1–2 мм, съёмная</td><td class="c">1</td></tr>
+<tr><td>Термогигрометр с памятью мин/макс</td><td>такой же, как стоит, чтобы показания сравнивались</td><td class="c">1</td></tr>
+<tr><td>Термометр с выносным щупом</td><td>щуп для погружения, провод от 1 м</td><td class="c">3</td></tr>
+<tr><td>Поплавок низкого уровня</td><td>под ток насоса, либо насос со встроенной защитой от сухого хода</td><td class="c">1</td></tr>
+<tr><td>Датчик протечки</td><td>такой же, как два в закупке</td><td class="c">+1</td></tr>
+<tr><td>Люксметр</td><td>до 100 тыс. лк</td><td class="c">1</td></tr>
+<tr><td>Обзорная камера</td><td>см. требования выше</td><td class="c">1</td></tr>
+</table></div>
+<h3>Подбор моделей на 20.11.2026</h3>
+<div class="tw"><table>
+<tr><th>Позиция</th><th>Основной вариант</th><th>Замена</th><th>Цена, ₸</th></tr>
+<tr><td>Второй термогигрометр</td><td>Xiaomi Temperature and Humidity Monitor Clock — такой же, как стоит</td><td>Xiaomi Mijia E-ink — 9 900; Clock Pro — от 13 500</td><td class="c">12 600–14 100</td></tr>
+<tr><td>Люксметр</td><td>UNI-T UT383, до 200 тыс. лк</td><td>UT383S с выносным датчиком — 17 800; Smart Sensor AS803 — 23 000</td><td class="c">8 500–13 900</td></tr>
+<tr><td>Обзорная камера</td><td>TP-Link Tapo C200 или C200C: доступ к снимкам (RTSP, ONVIF) заявлен производителем</td><td>Tapo C202 — 17 300</td><td class="c">13 300–19 900</td></tr>
+<tr><td>Фильтр</td><td>Двойная колба 10″ Slim Line: полипропилен + уголь</td><td>Сменный картридж 10 мкм — 480</td><td class="c">18 800, под заказ</td></tr>
+<tr><td>Термометр со щупом</td><td>Аквариумный цифровой с выносным датчиком — в Казахстане с ценой не найден, смотреть в зоомагазинах</td><td>Кухонный термометр-щуп ТР-101: мерить при обходе, в воде не оставлять</td><td class="c">1 000–2 300 за замену</td></tr>
+<tr><td>Датчик протечки</td><td>Автономный с сиреной, как два в закупке</td><td>С уведомлением на телефон: TP-Link Tapo T300, Aqara T1 (нужен хаб)</td><td class="c">не найдена</td></tr>
+<tr><td>Насос для откачки</td><td>Не подобран: нужен небольшой насос с напором от 5 м, который забирает воду со слоя 2–3 см</td><td>Дренажный «Вихрь ДН-900», напор до 8 м — только для аварийной откачки с пола и из бака: мелкую ванну он не выберет</td><td class="c">22 000–23 100 за замену</td></tr>
+<tr><td>Поплавок низкого уровня</td><td>В продаже есть, цена не найдена</td><td>Насос NFT со встроенной защитой от сухого хода</td><td class="c">не найдена</td></tr>
+<tr><td>Канистры, шланг, сетка</td><td colspan="2">Хозяйственный или строительный магазин</td><td class="c">—</td></tr>
+</table></div>
+<p class="sm mut">Цены взяты из выдачи казахстанских площадок (Satu, e-katalog, alfa.kz) без даты объявления: перед покупкой проверить цену и наличие в Астане. Камера Tapo комнатная, не влагозащищённая — ставить подальше от брызг и проверить, что у купленной ревизии есть RTSP.</p>
+
+</div>
+<div class="gtfoot"><a href="./" data-gtback>← Назад к шагам</a></div><script>
+(function(){
+  function back(e){
+    var same = false; try { same = document.referrer && new URL(document.referrer).origin === location.origin; } catch (x) {}
+    if (same && history.length > 1) { e.preventDefault(); history.back(); }
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('[data-gtback]'), function(a){ a.addEventListener('click', back); });
+})();
+</script></body></html>

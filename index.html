@@ -1,0 +1,173 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><title>Пилот: шаги</title><style>html{-webkit-text-size-adjust:100%}body{margin:0;font:14px system-ui}img{max-width:100%}[hidden]{display:none!important}</style><style>
+.gtbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:6px;padding:8px max(12px,env(safe-area-inset-right,0px)) 8px max(12px,env(safe-area-inset-left,0px));padding-top:calc(8px + env(safe-area-inset-top,0px));background:#14232b;color:#fff;font:600 14px/1 "Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
+.gtbar a{flex:none;display:inline-flex;align-items:center;min-height:40px;padding:0 12px;border-radius:9px;color:#d7e3e8;text-decoration:none;border:1px solid transparent}
+.gtbar a:hover{border-color:#3d525c;color:#fff}
+.gtbar a[aria-current="page"]{background:#24404b;color:#fff}
+.gtbar a.gtback{background:#4fd1c5;color:#06231f;font-weight:700;margin-right:6px}
+.gtbar a:focus-visible{outline:3px solid #6cb6f5;outline-offset:2px}
+.gtfoot{max-width:1040px;margin:0 auto;padding:8px 16px 40px}
+.gtfoot a{display:inline-flex;align-items:center;min-height:46px;padding:0 18px;border-radius:10px;background:#14232b;color:#fff;text-decoration:none;font:700 15px "Golos Text",system-ui,sans-serif}
+@media print{.gtbar,.gtfoot{display:none}}
+</style></head><body><nav class="gtbar" aria-label="Страницы пилота"><a href="./" aria-current="page">Шаги</a><a href="instrukciya.html">Инструкция</a><a href="pokupki.html">Что докупить</a><a href="tz-elektriku.html">ТЗ электрику</a><a href="zakupka.html">Закупка и сборка</a><a href="spisok.html">Список закупки</a></nav><meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Раскладка: одна колонка шагов по порядку; у шага — номер, рисунок, что сделать и большая галочка; сверху сколько сделано и какой шаг сейчас */
+:root{
+  --bg:#f3f6f7; --surface:#ffffff; --ink:#14232b; --mut:#586a73; --line:#d3dde2;
+  --accent:#0f766e; --water:#1d6fb8; --warn:#b45309; --ok:#2e7d32; --soft:#e7eef0; --pic:#f7fafb; --on:#ffffff;
+  --font:"Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0e1619; --surface:#162126; --ink:#e6eef1; --mut:#93a4ad; --line:#2a3a41; --accent:#4fd1c5; --water:#6cb6f5; --warn:#f0a44b; --ok:#7bd389; --soft:#22323a; --pic:#111b1f; --on:#06231f; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#0e1619; --surface:#162126; --ink:#e6eef1; --mut:#93a4ad; --line:#2a3a41; --accent:#4fd1c5; --water:#6cb6f5; --warn:#f0a44b; --ok:#7bd389; --soft:#22323a; --pic:#111b1f; --on:#06231f; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:16px/1.45 var(--font)}
+.wrap{max-width:760px;margin:0 auto;padding-block:22px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:12px}
+.k{font:600 12px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+h1{font-size:clamp(28px,6vw,40px);line-height:1.08;margin:6px 0 0;font-weight:700}
+h2{font-size:15px;font-weight:600;font-family:var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--mut);margin:18px 0 0}
+p{margin:0}
+.top{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.bar{height:10px;border-radius:99px;background:var(--soft);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:99px;transition:width .3s ease}
+.top b{font-size:18px}
+.top .cnt{font:600 14px var(--mono);color:var(--mut)}
+.note{font-size:13.5px;color:var(--mut)}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:14px;display:grid;grid-template-columns:118px minmax(0,1fr);overflow:hidden}
+.step.cur{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}
+.step.done{opacity:.62}
+.pic{background:var(--pic);border-right:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:10px 8px}
+.pic svg{width:100%;height:auto;display:block}
+.n{font:600 13px var(--mono);color:var(--mut)}
+.body{padding:13px 15px;display:flex;flex-direction:column;gap:7px;min-width:0}
+.body h3{font-size:18px;line-height:1.25;margin:0}
+.step.done h3{text-decoration:line-through}
+.what{font-size:15px}
+.what ol,.what ul{margin:4px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:3px}
+.who{font:600 12px/1.6 var(--mono);color:var(--mut)}
+.who span{border:1px solid var(--line);border-radius:5px;padding:0 7px;margin-right:6px;white-space:nowrap}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:2px}
+button.tick{min-height:44px;border-radius:10px;border:2px solid var(--accent);background:transparent;color:var(--accent);font:600 15px var(--font);padding:0 16px;cursor:pointer}
+button.tick[aria-pressed="true"]{background:var(--accent);color:var(--on)}
+button.tick:focus-visible,a.go:focus-visible{outline:3px solid var(--water);outline-offset:2px}
+a.go{min-height:44px;display:inline-flex;align-items:center;border-radius:10px;border:1px solid var(--line);padding:0 14px;color:var(--ink);text-decoration:none;font-weight:600;font-size:15px}
+a.go:hover{border-color:var(--accent)}
+.i-s{fill:none;stroke:var(--ink);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.i-f{fill:var(--soft);stroke:var(--ink);stroke-width:2.2;stroke-linejoin:round}
+.i-w{fill:var(--surface);stroke:var(--ink);stroke-width:2.2;stroke-linejoin:round}
+.i-a{fill:var(--accent);stroke:none} .i-b{fill:var(--water);stroke:none} .i-o{fill:var(--warn);stroke:none} .i-g{fill:var(--ok);stroke:none}
+.i-al{fill:none;stroke:var(--water);stroke-width:2.2;stroke-linecap:round}
+.i-gl{fill:none;stroke:var(--ok);stroke-width:2.6;stroke-linecap:round}
+.i-ol{fill:none;stroke:var(--warn);stroke-width:2.2;stroke-linecap:round}
+.i-t{fill:var(--ink);font:600 15px var(--mono)} .i-ts{fill:var(--mut);font:600 10px var(--mono)}
+@media (max-width:480px){.step{grid-template-columns:86px minmax(0,1fr)}.body{padding:12px}}
+@media (prefers-reduced-motion:reduce){.bar i{transition:none}}
+</style>
+
+<div class="wrap">
+  <div>
+    <div class="k">GreenTech · пилот в погребе</div>
+    <h1>Что делать, по шагам</h1>
+  </div>
+  <div class="top" id="top"></div>
+  <div id="list"></div>
+  <p class="note" id="save">Галочки сохраняются. Подробности по каждому шагу — в полной инструкции, сюда вынесено только главное.</p>
+</div>
+
+<script>
+(function () {
+  var LINK = { tz: 'tz-elektriku.html', main: 'zakupka.html', buy: 'pokupki.html', full: 'instrukciya.html' };
+  var P = {
+    msg: '<rect class="i-w" x="16" y="14" width="88" height="52" rx="10"></rect><path class="i-w" d="M36 66l-6 14 20-14"></path><path class="i-o" d="M64 22L48 44h12l-6 16 18-24H60z"></path>',
+    flask: '<path class="i-w" d="M50 12h20M54 12v24L34 72a6 6 0 0 0 5 9h42a6 6 0 0 0 5-9L66 36V12"></path><path class="i-b" d="M44 58h32l8 14a3 3 0 0 1-3 5H39a3 3 0 0 1-3-5z" opacity=".7"></path>',
+    lamp: '<rect class="i-f" x="14" y="14" width="92" height="10" rx="4"></rect><path class="i-ol" d="M30 30l-6 18M50 30l-2 18M70 30l2 18M90 30l6 18"></path><rect class="i-w" x="48" y="56" width="24" height="28" rx="4"></rect><circle class="i-w" cx="60" cy="54" r="6"></circle><text class="i-ts" x="52" y="74">лк</text>',
+    cart: '<path class="i-s" d="M12 20h14l10 38h46l10-28H30"></path><circle class="i-f" cx="44" cy="72" r="7"></circle><circle class="i-f" cx="76" cy="72" r="7"></circle><rect class="i-a" x="46" y="34" width="12" height="18" rx="2"></rect><rect class="i-b" x="62" y="38" width="12" height="14" rx="2"></rect>',
+    extra: '<rect class="i-w" x="10" y="24" width="52" height="32" rx="7"></rect><text class="i-ts" x="18" y="45" font-size="13">18,4°</text><path class="i-f" d="M74 34h20l10 9v32a3 3 0 0 1-3 3H77a3 3 0 0 1-3-3z"></path><rect class="i-w" x="77" y="25" width="10" height="9" rx="2"></rect>',
+    sprout: '<rect class="i-f" x="14" y="56" width="92" height="20" rx="4"></rect><path class="i-gl" d="M32 56V40M60 56V34M88 56V40"></path><path class="i-g" d="M32 42c-10 0-12-10-12-10s12-2 12 10zm0 0c10 0 12-10 12-10s-12-2-12 10zM60 36c-10 0-12-10-12-10s12-2 12 10zm0 0c10 0 12-10 12-10s-12-2-12 10zM88 42c-10 0-12-10-12-10s12-2 12 10zm0 0c10 0 12-10 12-10s-12-2-12 10z"></path>',
+    rack: '<path class="i-s" d="M22 10v72M98 10v72M60 10v72" stroke-width="3"></path><path class="i-s" d="M18 28h84M18 52h84M18 76h84" stroke-width="4"></path>',
+    socket: '<rect class="i-w" x="30" y="12" width="60" height="66" rx="10"></rect><circle class="i-f" cx="60" cy="45" r="20"></circle><circle cx="52" cy="45" r="3.5" style="fill:var(--ink)"></circle><circle cx="68" cy="45" r="3.5" style="fill:var(--ink)"></circle><path class="i-o" d="M98 8L88 24h8l-4 12 12-18h-8z"></path>',
+    bath: '<rect class="i-f" x="14" y="10" width="92" height="8" rx="3"></rect><path class="i-ol" d="M34 22l-3 10M60 22v10M86 22l3 10"></path><rect class="i-w" x="14" y="56" width="92" height="24" rx="4"></rect><rect class="i-b" x="18" y="64" width="84" height="12" rx="2" opacity=".6"></rect><circle class="i-g" cx="36" cy="48" r="10"></circle><circle class="i-g" cx="60" cy="46" r="11"></circle><circle class="i-g" cx="84" cy="48" r="10"></circle>',
+    drop: '<path class="i-b" d="M40 14c14 18 20 28 20 38a20 20 0 0 1-40 0c0-10 6-20 20-38z" opacity=".75"></path><path class="i-s" d="M40 14c14 18 20 28 20 38a20 20 0 0 1-40 0c0-10 6-20 20-38z"></path><text class="i-t" x="68" y="52" font-size="18">48 ч</text>',
+    sens: '<rect class="i-w" x="10" y="16" width="56" height="34" rx="8"></rect><text class="i-ts" x="18" y="38" font-size="13">50 %</text><ellipse class="i-w" cx="84" cy="64" rx="24" ry="11"></ellipse><circle class="i-o" cx="84" cy="64" r="4"></circle><path class="i-al" d="M24 80q8-6 16 0t16 0"></path>',
+    days: '<rect class="i-f" x="14" y="12" width="64" height="8" rx="3"></rect><path class="i-ol" d="M28 24l-3 10M46 24v10M64 24l3 10"></path><path class="i-w" d="M92 14a7 7 0 0 1 14 0v40a11 11 0 1 1-14 0z"></path><circle class="i-o" cx="99" cy="63" r="6"></circle><path class="i-ol" d="M99 60V30" stroke-width="4"></path><text class="i-t" x="14" y="72" font-size="17">3 дня</text>',
+    plant: '<rect class="i-w" x="18" y="50" width="84" height="30" rx="5"></rect><rect class="i-b" x="22" y="60" width="76" height="16" rx="2" opacity=".6"></rect><path class="i-gl" d="M60 52V30"></path><path class="i-g" d="M60 34c-16 0-20-16-20-16s20-4 20 16zm0 0c16 0 20-16 20-16s-20-4-20 16z"></path><path class="i-s" d="M60 60v10M54 66l6 6 6-6" stroke-width="1.6"></path>',
+    daily: '<rect class="i-w" x="28" y="10" width="64" height="72" rx="6"></rect><path class="i-gl" d="M38 26l4 4 7-8M38 42l4 4 7-8M38 58l4 4 7-8"></path><path class="i-s" d="M56 28h26M56 44h26M56 60h26" stroke-width="2"></path>',
+    cam: '<path class="i-f" d="M40 62h40l6 16H34z"></path><circle class="i-w" cx="60" cy="40" r="26"></circle><circle class="i-f" cx="60" cy="40" r="13"></circle><circle cx="60" cy="40" r="6" style="fill:var(--ink)"></circle>'
+  };
+  /* шаг: id, этап, рисунок, заголовок, что сделать (HTML), кто, [ссылка, подпись] */
+  var STEPS = [
+    ['s1', 'Сейчас', 'msg', 'Передайте задание электрику', 'Электрик осматривает линию погреба и отвечает на 7 вопросов из задания.', ['руководитель', 'электрик'], ['tz', 'Открыть задание']],
+    ['s2', 'Сейчас', 'flask', 'Заберите анализ воды', 'Когда лаборатория отдаст протокол — передайте его руководителю проекта. По нему считается раствор и решается, нужен ли фильтр.', ['руководитель']],
+    ['s4', 'Сейчас', 'lamp', 'Купите один светильник и люксметр', 'Светильник LED 36 Вт длиной 1,2 м и люксметр UNI-T UT383. Включите светильник в 20–25 см над столом, замерьте люксметром в 6 точках и запишите цифры. По ним решается, сколько светильников покупать.', ['руководитель']],
+    ['s5', 'Закупка', 'cart', 'Купите всё по основному списку', 'Ванны, трубы, бак, насос, компрессоры, вытяжка, удобрения, тестер. Светильники — только после замера образца, остальное можно сразу.', ['руководитель'], ['main', 'Основной список']],
+    ['s6', 'Закупка', 'extra', 'Докупите три мелочи', 'Второй термогигрометр Xiaomi, 2–3 канистры по 20 л, сетку на слив труб. Остальное из списка подождёт.', ['руководитель'], ['buy', 'Список с рисунками']],
+    ['s7', 'Сборка', 'rack', 'Стеллажи', 'Положить полки на второй стеллаж и продлить оба стеллажа до лестницы — каждый станет по три секции. Усилить полки: ванна с водой весит 40 кг.', ['монтажники']],
+    ['s8', 'Сборка', 'socket', 'Щиток и розетки', 'Электрик ставит защиту и три группы розеток на стене не ниже метра от пола — по тому же заданию.', ['электрик'], ['tz', 'Задание электрику']],
+    ['s9', 'Сборка', 'sprout', 'Посейте рассаду дома', 'За две недели до конца сборки. Рассаде нужно 12–17 дней, поэтому сеем заранее, чтобы погреб не стоял пустым.', ['ответственный за погреб']],
+    ['s10', 'Сборка', 'bath', 'Ванны, трубы, бак, свет, вытяжка', 'Всё ставится по документу для монтажников. Ванны — строго по уровню.', ['монтажники'], ['main', 'Документ для монтажников']],
+    ['s11', 'Запуск', 'drop', 'Залейте воду и подождите 48 часов', '<ul><li>Нигде не течёт.</li><li>Вода идёт по всем трём трубам.</li><li>Выключите автомат в доме: насос и компрессоры должны работать от ИБП.</li></ul>', ['монтажники', 'ответственный за погреб']],
+    ['s12', 'Запуск', 'sens', 'Поставьте датчики', '<ul><li>Термогигрометры: один в проходе, второй на верхней полке стеллажа Б.</li><li>Датчики протечки: под бак и под стеллажи.</li><li>Тестер pH откалибровать по растворам из набора.</li></ul>', ['ответственный за погреб']],
+    ['s13', 'Запуск', 'days', 'Три дня со светом, без растений', 'Утром и вечером запишите температуру и влажность с обоих термогигрометров и температуру воды тестером. Передайте записи руководителю проекта: по ним решается, нужен ли обогреватель или вытяжка сильнее.', ['ответственный за погреб']],
+    ['s14', 'Запуск', 'plant', 'Раствор и посадка', 'Рецепт раствора выдаёт руководитель проекта, по анализу воды. Замешать, проверить тестером: pH 5,8–6,2 и EC 1,2–1,8. Высадить рассаду.', ['руководитель', 'ответственный за погреб']],
+    ['s15', 'Работа', 'daily', 'Каждый день — пять записей', '<ol><li>Воздух: температура и влажность.</li><li>Раствор в каждой ванне и в баке: pH, EC, температура.</li><li>Сколько долили воды.</li><li>Два счётчика электричества.</li><li>Фото каждого яруса.</li></ol>Вносить в приложение: Пилот → «Ввод». Это 5–10 минут.', ['ответственный за погреб']],
+    ['s16', 'Работа', 'cam', 'Через неделю — решаем про камеру', 'Разбираем первую неделю с растениями и решаем, какую камеру ставить и куда.', ['руководитель']]
+  ];
+  var KEY = 'gt-pilot-steps', done = {}, ref = null;
+  try { done = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { done = {}; }
+  function keep() { try { localStorage.setItem(KEY, JSON.stringify(done)); } catch (e) {} }
+  function say(t) { var el = document.getElementById('save'); if (el) el.textContent = t; }
+  function render() {
+    var n = STEPS.filter(function (s) { return done[s[0]]; }).length, cur = STEPS.filter(function (s) { return !done[s[0]]; })[0], stage = '', html = '';
+    document.getElementById('top').innerHTML = '<span class="cnt">Сделано ' + n + ' из ' + STEPS.length + '</span><div class="bar"><i style="width:' + Math.round(n / STEPS.length * 100) + '%"></i></div>' +
+      (cur ? '<span class="note">Сейчас шаг</span><b>' + (STEPS.indexOf(cur) + 1) + '. ' + cur[3] + '</b>' : '<b>Все шаги пройдены</b>');
+    STEPS.forEach(function (s, i) {
+      if (s[1] !== stage) { stage = s[1]; html += '<h2>' + stage + '</h2>'; }
+      var on = !!done[s[0]];
+      html += '<div class="step' + (on ? ' done' : '') + (s === cur ? ' cur' : '') + '" style="margin-top:10px"><div class="pic"><span class="n">шаг ' + (i + 1) + '</span><svg viewBox="0 0 120 90" aria-hidden="true">' + P[s[2]] + '</svg></div>' +
+        '<div class="body"><h3>' + s[3] + '</h3><div class="what">' + s[4] + '</div><div class="who">' + s[5].map(function (w) { return '<span>' + w + '</span>'; }).join('') + '</div>' +
+        '<div class="btns"><button class="tick" type="button" id="tick-' + s[0] + '" data-id="' + s[0] + '" aria-pressed="' + on + '">' + (on ? '✓ Сделано' : 'Отметить сделанным') + '</button>' +
+        (s[6] ? '<a class="go" href="' + LINK[s[6][0]] + '">' + s[6][1] + ' →</a>' : '') + '</div></div></div>';
+    });
+    html += '<div class="btns" style="margin-top:16px"><a class="go" href="' + LINK.full + '">Полная инструкция →</a></div>';
+    document.getElementById('list').innerHTML = html;
+  }
+  document.getElementById('list').addEventListener('click', function (e) {
+    var b = e.target.closest('button.tick'); if (!b) return;
+    var id = b.dataset.id; done[id] = !done[id]; keep(); render();
+    var f = document.getElementById('tick-' + id); if (f && f.focus) f.focus();
+    if (!ref) return;
+    var body = {}; body[id] = !!done[id];
+    ref.get().then(function (snap) { return snap.exists ? ref.update(body) : ref.set(body); })
+      .then(function () { say('Галочки сохранены и видны на всех ваших устройствах.'); }, function () { say('Не получилось сохранить в общий список: галочка осталась только на этом устройстве.'); });
+  });
+  render();
+  /* общий список галочек: если страница открыта на claude.ai под своим входом, отметки видны на всех устройствах */
+  if (window.claude && typeof window.claude.use === 'function') {
+    window.claude.use('db').then(function (db) {
+      if (!db) { say('Галочки сохраняются на этом устройстве.'); return; }
+      ref = db.doc('steps/pilot');
+      try {
+        db.collection('steps').onSnapshot(function (snap) {
+          snap.docs.forEach(function (d) {
+            if (d.id !== 'pilot' || !d.exists) return;
+            var b = d.data() || {};
+            STEPS.forEach(function (s) { if (typeof b[s[0]] === 'boolean') done[s[0]] = b[s[0]]; });
+            keep(); render();
+          });
+          say('Галочки сохраняются и видны на всех ваших устройствах.');
+        });
+      } catch (e) { say('Галочки сохраняются на этом устройстве.'); }
+    }, function () { say('Галочки сохраняются на этом устройстве.'); });
+  } else say('Галочки сохраняются на этом устройстве.');
+})();
+</script>
+<script>
+(function(){
+  function back(e){
+    var same = false; try { same = document.referrer && new URL(document.referrer).origin === location.origin; } catch (x) {}
+    if (same && history.length > 1) { e.preventDefault(); history.back(); }
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('[data-gtback]'), function(a){ a.addEventListener('click', back); });
+})();
+</script></body></html>

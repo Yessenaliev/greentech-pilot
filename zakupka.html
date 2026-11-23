@@ -1,0 +1,380 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><title>Гидроферма в погребе — закупка и схема сборки</title><style>html{-webkit-text-size-adjust:100%}body{margin:0;font:14px system-ui}img{max-width:100%}[hidden]{display:none!important}</style><style>
+.gtbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:6px;padding:8px max(12px,env(safe-area-inset-right,0px)) 8px max(12px,env(safe-area-inset-left,0px));padding-top:calc(8px + env(safe-area-inset-top,0px));background:#14232b;color:#fff;font:600 14px/1 "Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
+.gtbar a{flex:none;display:inline-flex;align-items:center;min-height:40px;padding:0 12px;border-radius:9px;color:#d7e3e8;text-decoration:none;border:1px solid transparent}
+.gtbar a:hover{border-color:#3d525c;color:#fff}
+.gtbar a[aria-current="page"]{background:#24404b;color:#fff}
+.gtbar a.gtback{background:#4fd1c5;color:#06231f;font-weight:700;margin-right:6px}
+.gtbar a:focus-visible{outline:3px solid #6cb6f5;outline-offset:2px}
+.gtfoot{max-width:1040px;margin:0 auto;padding:8px 16px 40px}
+.gtfoot a{display:inline-flex;align-items:center;min-height:46px;padding:0 18px;border-radius:10px;background:#14232b;color:#fff;text-decoration:none;font:700 15px "Golos Text",system-ui,sans-serif}
+@media print{.gtbar,.gtfoot{display:none}}
+</style></head><body><nav class="gtbar" aria-label="Страницы пилота"><a class="gtback" href="./" data-gtback>← Назад</a><a href="./">Шаги</a><a href="instrukciya.html">Инструкция</a><a href="pokupki.html">Что докупить</a><a href="tz-elektriku.html">ТЗ электрику</a><a href="zakupka.html" aria-current="page">Закупка и сборка</a><a href="spisok.html">Список закупки</a></nav><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f0e6;--card:#fbfaf5;--ink:#1c2620;--mut:#5d6b61;--line:#d6d1c2;--acc:#2f5d3a;--acc2:#b26b12;--warn:#9b2c1f;--blue:#1f5fa8}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 "IBM Plex Sans",system-ui,sans-serif}
+.wrap{max-width:1080px;margin:0 auto;padding:18px 14px 60px}
+h1{font-size:22px;margin:4px 0 2px}
+.sub{color:var(--mut);font-size:13px;margin-bottom:12px}
+h2{font-size:18px;margin:30px 0 8px;padding-top:10px;border-top:3px solid var(--ink)}
+h3{font-size:15.5px;margin:20px 0 6px;display:flex;gap:8px;align-items:baseline}
+h3 .n{font-family:"IBM Plex Mono",monospace;color:var(--acc)}
+h3 .s{margin-left:auto;font:500 13px "IBM Plex Mono",monospace;color:var(--mut)}
+.tw{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:6px}
+table{border-collapse:collapse;width:100%;min-width:880px;font-size:13px}
+th{text-align:left;font-weight:500;color:var(--mut);font-size:12px;background:#ece8db;padding:6px 8px;border-bottom:1px solid var(--line)}
+td{padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.q,td.p{font-family:"IBM Plex Mono",monospace;white-space:nowrap;text-align:right}
+td.alt{color:#3d4a41;font-size:12.5px;background:#f6f3ea}
+.m{color:var(--mut);font-size:12.5px}
+.note{background:var(--card);border-left:3px solid var(--acc);padding:8px 10px;margin:8px 0;font-size:13.5px}
+.note.w{border-color:var(--warn)}
+.tot{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px;margin:8px 0}
+.tot div{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:8px 10px}
+.tot .v{font:600 20px "IBM Plex Mono",monospace}
+.tot .k{font-size:12px;color:var(--mut)}
+svg{width:100%;height:auto;background:var(--card);border:1px solid var(--line);border-radius:6px;display:block;margin:6px 0}
+svg text{font-family:"IBM Plex Sans",sans-serif}
+a{color:var(--acc)}
+ol,ul{margin:6px 0;padding-left:22px}li{margin:4px 0}
+.crit li b{color:var(--warn)}
+@media print{body{background:#fff}.tw,svg{border-color:#bbb}h2{page-break-before:auto}}
+</style>
+<div class="wrap">
+
+<h1>Гидроферма в погребе — список закупки и схема сборки</h1>
+<div class="sub">Редакция 20.11.2026 · погреб 2,95 × 2,15 м, высота 1,90 м · два одинаковых стеллажа по ≈ 2,15 м, по 3 яруса · ванны с раствором (DWC) + 1 ярус проточных каналов (NFT) · цены ориентировочные, ₸</div>
+
+<div class="note"><b>Что собираем.</b> Два стеллажа вдоль длинных стен. На ярусах — ванны с питательным раствором, на ванне плавает пенопластовый плот со стаканчиками (DWC). Средний ярус стеллажа Б — 3 трубы, по которым раствор течёт тонким слоем и стекает в бак на полу (NFT). Над каждым ярусом — светодиодные светильники. Вентиляция — вытяжка через существующую трубу, приток через люк.</div>
+
+<div class="note w"><b>Изменения 20.11.2026.</b> Стеллажи теперь одинаковые: оба по три секции, до края лестницы. Трубы NFT и бак стоят на стороне стеллажа Б: бак в свободном углу у лестницы, трубы — на среднем ярусе, в двух секциях рядом с баком. Ванн стало 10: по три на нижнем и среднем ярусах стеллажа А, три на нижнем ярусе стеллажа Б и одна в третьей секции его среднего яруса. Добавились 2 ванны, 6 коротких светильников и 1 компрессор.</div>
+
+<div class="tot">
+ <div><div class="k">Закупка для запуска</div><div class="v">≈ 604 000 ₸</div></div>
+ <div><div class="k">Второй этап (свет на ярусы А2, Б1, Б2)</div><div class="v">≈ 53 000 ₸</div></div>
+ <div><div class="k">Нагрузка на электролинию</div><div class="v">≈ 1,0 кВт</div><div class="k">≈ 4,5 А, одна линия 16 А с УЗО</div></div>
+</div>
+
+<h2>Часть 1. Что купить</h2>
+<div class="m">Сумма считается по основному варианту. Альтернативы — равноценная замена, если основного нет в наличии.</div>
+
+<h3><span class="n">0</span>Стеллажи<span class="s">≈ 28 000</span></h3>
+<div class="tw"><table>
+<tr><th>Позиция</th><th>Требования</th><th>Основной вариант</th><th>Альтернатива 1</th><th>Альтернатива 2</th><th>Кол-во</th><th>Цена</th><th>Сумма</th></tr>
+<tr><td><b>Наращивание обоих стеллажей</b> на 1 секцию</td><td>стеллажи А и Б продлить до края лестницы: каждый итого ≈ 2 150 (мерить по месту), 3 секции ≈ 725 в осях, просвет секции ≥ 670 (под ванну 660). Полки на высотах 200 / 760 / 1320</td><td>брус 50 × 50 (стойки, ригели) + доска/OSB 18 мм на полки, саморезы, уголки</td><td class="alt">металлический стеллаж 700–750 × 600 приставить в торец</td><td class="alt">перебрать стеллаж целиком на 3 равные секции</td><td class="q">2 к-та</td><td class="p">≈ 12 000</td><td class="p">≈ 24 000</td></tr>
+<tr><td>Усиление полок</td><td>каждая полка с ваннами — ≥ 130 кг (3 ванны) без прогиба, на обоих стеллажах</td><td>поперечина брус 50 × 50 под центр каждой ванны</td><td class="alt">стальной уголок 40 × 40</td><td class="alt">подпорка-стойка по центру секции</td><td class="q">к-т</td><td class="p"></td><td class="p">≈ 4 000</td></tr>
+</table></div>
+
+<h3><span class="n">1</span>Освещение<span class="s">≈ 107 500</span></h3>
+<div class="tw"><table>
+<tr><th>Позиция</th><th>Требования</th><th>Основной вариант</th><th>Альтернатива 1</th><th>Альтернатива 2</th><th>Кол-во</th><th>Цена</th><th>Сумма</th></tr>
+<tr><td><b>Светильник линейный LED 1200 мм, 36 Вт</b></td><td>белый 4000–6500 К; световой поток ≥ 3 600 лм; ширина ≤ 8 см; желательно IP65</td><td>влагозащищённый 36 Вт IP65 — <a href="https://satu.kz/Vt-led.html">Satu</a></td><td class="alt">Alpha Light 1200 мм 36 Вт, IP20 — ≈ 3 300 <a href="https://satu.kz/c828855-alpha-light.html">Satu</a></td><td class="alt">Prosvet 120 см — ≈ 3 000–3 500, Астана <a href="https://www.olx.kz/d/kk/obyavlenie/svetilnik-120sm-IDoMq2a.html">OLX</a></td><td class="q">15</td><td class="p">5 164</td><td class="p">77 460</td></tr>
+<tr><td><b>Светильник линейный LED 600 мм, 18 Вт</b></td><td>над третьей секцией каждого стеллажа (продолжение рядов 1200 мм); те же требования, ≥ 1 800 лм</td><td>та же серия, что 1200 мм, длиной 600 мм</td><td class="alt">LED-панель 595 × 180, 18–20 Вт</td><td class="alt">светильник 900 мм, 24–28 Вт (если найдётся)</td><td class="q">10</td><td class="p">≈ 3 000</td><td class="p">≈ 30 000</td></tr>
+<tr><td>Второй этап</td><td>Б1 +1 длинный + 1 короткий; А2 — 4 длинных + 4 коротких над ваннами; Б2 — 4 коротких над ванной в третьей секции</td><td colspan="3" class="alt">те же модели</td><td class="q">5 + 9</td><td class="p"></td><td class="p">≈ 53 000</td></tr>
+<tr><td>Цепочки/тросики с крючками</td><td>подвес светильников над верхними ярусами</td><td>цепочка 1 м + 2 крючка на светильник</td><td class="alt">перфолента монтажная</td><td class="alt">тросик 1,5 мм + зажимы</td><td class="q">4 к-та</td><td class="p"></td><td class="p">в п. 7</td></tr>
+</table></div>
+<div class="note w"><b>Сначала купить 1 светильник и проверить:</b> реальную мощность (ваттметр, должно быть ≈ 36 Вт) и освещённость — приложением-люксметром на телефоне, на расстоянии 20–25 см под светильником. На уровне листьев, когда горят все светильники яруса, нужно 17 000–20 000 лк. Если меньше 15 000 — брать другую модель.</div>
+
+<h3><span class="n">2</span>Ванны с раствором (DWC)<span class="s">≈ 77 100</span></h3>
+<div class="tw"><table>
+<tr><th>Позиция</th><th>Требования</th><th>Основной вариант</th><th>Альтернатива 1</th><th>Альтернатива 2</th><th>Кол-во</th><th>Цена</th><th>Сумма</th></tr>
+<tr><td><b>Ванна</b> (собирается из материалов ниже)</td><td>внутри 610 × 520 × 150 мм; снаружи ≤ 660 × 570; раствор 100 мм ≈ 30 л; непрозрачная. А1 ×3, А2 ×3, Б1 ×3, Б2 ×1</td><td>самодельная: OSB + доска + плёнка</td><td class="alt">готовый непрозрачный пластиковый контейнер с внешним размером ≤ 660 × 570, высотой 15–20 см</td><td class="alt">строительное корыто ≈ 40 л — если влезает в секцию 680 мм</td><td class="q">10</td><td class="p"></td><td class="p"></td></tr>
+<tr><td>OSB-3, 9 мм</td><td>лист 2500 × 1250 → 6 днищ 660 × 570</td><td>OSB-3 9 мм</td><td class="alt">фанера ФК 10 мм</td><td class="alt">ЛДСП 16 мм</td><td class="q">2 листа</td><td class="p">≈ 8 000</td><td class="p">≈ 16 000</td></tr>
+<tr><td>Доска 25 × 150 × 3000</td><td>борта, 1 доска на ванну</td><td>строганая сосна</td><td class="alt">полосы OSB 150 мм</td><td class="alt">брус 50 × 150</td><td class="q">10</td><td class="p">≈ 2 000</td><td class="p">≈ 20 000</td></tr>
+<tr><td>Плёнка чёрная</td><td>в 2 слоя, ≈ 20 м²</td><td>ПЭ 200 мкм</td><td class="alt">плёнка для пруда ПВХ 0,5 мм</td><td class="alt">ПЭ 150 мкм в 3 слоя</td><td class="q">≈ 20 м²</td><td class="p"></td><td class="p">≈ 8 100</td></tr>
+<tr><td>Пенополистирол экструдированный 30 мм</td><td>лист 1185 × 585; на ванну — дно 610 × 520 и плот 590 × 510 (из листа выходит одна деталь)</td><td>Пеноплэкс Комфорт 30 мм</td><td class="alt">Технониколь XPS Carbon 30 мм</td><td class="alt">20 мм — только на плоты</td><td class="q">20</td><td class="p">≈ 1 250</td><td class="p">≈ 25 000</td></tr>
+<tr><td>Коронка</td><td>под диаметр стаканчика (мерить по корпусу, не по ободку)</td><td>коронка по дереву Ø 50</td><td class="alt">набор коронок</td><td class="alt">нож/терморезак по пенопласту</td><td class="q">1</td><td class="p">≈ 3 000</td><td class="p">≈ 3 000</td></tr>
+<tr><td>Крепёж</td><td>саморезы 4 × 35, скобы, герметик</td><td colspan="3" class="alt">любые</td><td class="q">к-т</td><td class="p"></td><td class="p">≈ 5 000</td></tr>
+</table></div>
+
+<h3><span class="n">3</span>Водоснабжение: каналы NFT, бак, насос, подача и возврат<span class="s">≈ 56 500</span></h3>
+<div class="tw"><table>
+<tr><th>Позиция</th><th>Требования</th><th>Основной вариант</th><th>Альтернатива 1</th><th>Альтернатива 2</th><th>Кол-во</th><th>Цена</th><th>Сумма</th></tr>
+<tr><td><b>Канал NFT</b></td><td>3 шт. по 1,40 м; сверху 7 отверстий через 200 мм; непрозрачный</td><td>труба канализационная ПВХ Ø 110, серая, 2 м</td><td class="alt">профиль NFT 100 × 50 (под заказ, 2–4 недели)</td><td class="alt">водосточный желоб ПВХ 120–125 мм с крышкой</td><td class="q">3</td><td class="p">≈ 2 500</td><td class="p">≈ 7 500</td></tr>
+<tr><td>Заглушки Ø 110</td><td>на выходе — отверстие Ø 25–32 под слив</td><td>заглушка ПВХ 110</td><td class="alt">отвод 110/90 на выходе</td><td class="alt">—</td><td class="q">6</td><td class="p">≈ 500</td><td class="p">≈ 3 000</td></tr>
+<tr><td><b>Насос погружной</b></td><td>≈ 270 л/ч на подъёме 1 м; Hmax ≥ 1,5 м — проверить по шильдику</td><td>Atman AT-105S — <a href="https://satu.kz/Atman.html">Satu</a></td><td class="alt">Atman AT-202 / AT-203 — 14 500 / 18 500 <a href="https://satu.kz/kostanay/Atman.html">Satu</a></td><td class="alt">любой фонтанный 1 000–2 000 л/ч с Hmax ≥ 1,5 м</td><td class="q">1</td><td class="p">26 000</td><td class="p">26 000</td></tr>
+<tr><td><b>Бак раствора</b></td><td>60 л, пищевой, непрозрачный, с крышкой</td><td>бак/бочка пищевая 60 л</td><td class="alt">бочка 50–65 л с крышкой</td><td class="alt">контейнер 60 л, обмотать чёрной плёнкой</td><td class="q">1</td><td class="p">≈ 7 000</td><td class="p">≈ 7 000</td></tr>
+<tr><td>Поддон под бак</td><td>≥ 70 × 50 см, борт ≥ 5 см</td><td>пластиковый поддон</td><td class="alt">низкий таз / лоток</td><td class="alt">рамка + плёнка</td><td class="q">1</td><td class="p">≈ 3 000</td><td class="p">≈ 3 000</td></tr>
+<tr><td>Подача</td><td>от насоса до входов каналов, кран на каждый канал</td><td>трубка ПЭ 16 мм 5 м + 3 крана-стартера + тройник, заглушка</td><td class="alt">шланг ПВХ 1/2" + 3 шаровых крана</td><td class="alt">аквариумный шланг 12/16 + регуляторы</td><td class="q">к-т</td><td class="p"></td><td class="p">≈ 4 000</td></tr>
+<tr><td>Байпас</td><td>лишний поток насоса — обратно в бак</td><td>кран шаровый 1/2" + тройник</td><td class="alt">регулятор на насосе</td><td class="alt">—</td><td class="q">1</td><td class="p"></td><td class="p">≈ 2 000</td></tr>
+<tr><td>Возврат</td><td>от выходов каналов в бак самотёком</td><td>канализация ПВХ 50 мм 2 м + отводы ×2 + тройники ×3</td><td class="alt">гофра сливная 40 мм</td><td class="alt">—</td><td class="q">к-т</td><td class="p"></td><td class="p">≈ 4 000</td></tr>
+</table></div>
+<div class="m">Водопровод в погреб не нужен: долив вручную отстоянной водой раз в 2–3 дня (≈ 1–1,5 л на ванну, 2–4 л в бак NFT в сутки).</div>
+
+<h3><span class="n">4</span>Аэрация раствора<span class="s">≈ 69 600</span></h3>
+<div class="tw"><table>
+<tr><th>Позиция</th><th>Требования</th><th>Основной вариант</th><th>Альтернатива 1</th><th>Альтернатива 2</th><th>Кол-во</th><th>Цена</th><th>Сумма</th></tr>
+<tr><td><b>Компрессор</b></td><td>11 выходов: 10 ванн + бак NFT, всего ≈ 360 л</td><td>Atman PP-300, 2 выхода — <a href="https://satu.kz/Atman.html">Satu</a></td><td class="alt">Hailea ACO-318 (один на всё) — <a href="https://satu.kz/Kompressory">Satu</a>, цену уточнить</td><td class="alt">любой мембранный ≥ 20 л/мин с распределителем на 12 выходов</td><td class="q">6</td><td class="p">9 000</td><td class="p">54 000</td></tr>
+<tr><td>Распылитель</td><td>по 1 на ванну и бак</td><td>камень-цилиндр 50 × 25</td><td class="alt">диск 60 мм</td><td class="alt">шланг-распылитель</td><td class="q">12</td><td class="p">≈ 500</td><td class="p">≈ 6 000</td></tr>
+<tr><td>Шланг 4/6 мм</td><td></td><td>силиконовый</td><td class="alt">ПВХ аквариумный</td><td class="alt">—</td><td class="q">30 м</td><td class="p"></td><td class="p">≈ 6 000</td></tr>
+<tr><td>Обратный клапан 4 мм</td><td>на каждый шланг</td><td>пластиковый аквариумный</td><td class="alt">не нужен, если компрессоры стоят выше воды</td><td class="alt">—</td><td class="q">12</td><td class="p">≈ 300</td><td class="p">≈ 3 600</td></tr>
+</table></div>
+
+<h3><span class="n">5</span>Вытяжка<span class="s">≈ 49 100</span></h3>
+<div class="tw"><table>
+<tr><th>Позиция</th><th>Требования</th><th>Основной вариант</th><th>Альтернатива 1</th><th>Альтернатива 2</th><th>Кол-во</th><th>Цена</th><th>Сумма</th></tr>
+<tr><td><b>Канальный вентилятор Ø 100</b></td><td>80–150 м³/ч; ставится на выход существующего колена Ø 110 (торцевая стена напротив люка)</td><td>Вентс ВКМ 100 — <a href="https://satu.kz/astana/Ventilyator-vkm.html">Satu Астана</a></td><td class="alt">Вентс ВКК-100 — ≈ 26 000</td><td class="alt">бытовой Вентс 100 С в торец трубы — ≈ 5–8 тыс. (на пределе по мощности)</td><td class="q">1</td><td class="p">33 600</td><td class="p">33 600</td></tr>
+<tr><td>Регулятор скорости</td><td>до 300 Вт</td><td>Вентс РС-1-300</td><td class="alt">любой регулятор для вентиляторов 300 Вт</td><td class="alt">без регулятора — работа по таймеру</td><td class="q">1</td><td class="p">≈ 8 000</td><td class="p">≈ 8 000</td></tr>
+<tr><td>Переходник 110 → 100, хомуты</td><td></td><td>переходник ПВХ</td><td class="alt">манжета + герметик</td><td class="alt">—</td><td class="q">к-т</td><td class="p"></td><td class="p">≈ 1 500</td></tr>
+<tr><td>Обратный клапан Ø 100</td><td>за вентилятором, по ходу воздуха</td><td>клапан канальный 100</td><td class="alt">клапан-«бабочка» на выходе снаружи</td><td class="alt">—</td><td class="q">1</td><td class="p">≈ 3 000</td><td class="p">≈ 3 000</td></tr>
+<tr><td>Выход снаружи</td><td>поднять на 40–60 см над плиткой (снег); сетка с ячейкой ≥ 10 мм</td><td>труба ПВХ 110 0,5–1 м + отвод + сетка</td><td class="alt">оставить колпак, зимой чистить от инея</td><td class="alt">—</td><td class="q">к-т</td><td class="p"></td><td class="p">≈ 3 000</td></tr>
+</table></div>
+
+<h3><span class="n">6</span>Приток<span class="s">≈ 2 000</span></h3>
+<div class="tw"><table>
+<tr><th>Позиция</th><th>Требования</th><th>Основной вариант</th><th>Альтернатива 1</th><th>Альтернатива 2</th><th>Кол-во</th><th>Цена</th><th>Сумма</th></tr>
+<tr><td><b>Решётка в люк</b></td><td>≈ 150 × 150 мм; воздух идёт из дома</td><td>вентиляционная решётка пластиковая</td><td class="alt">постоянная щель 1–2 см под крышкой люка</td><td class="alt">отдельная труба Ø 50–110 с улицы — только если влажность держится &gt; 75 %</td><td class="q">1</td><td class="p">≈ 2 000</td><td class="p">≈ 2 000</td></tr>
+</table></div>
+<div class="note w">Приток <b>не</b> пускать через ту же трубу, что и вытяжку (например, шлангом внутри неё): выброс и забор окажутся рядом, воздух будет ходить по кругу.</div>
+
+<h3><span class="n">7</span>Влажность, температура, перемешивание воздуха<span class="s">≈ 12 000</span></h3>
+<div class="tw"><table>
+<tr><th>Позиция</th><th>Требования</th><th>Основной вариант</th><th>Альтернатива 1</th><th>Альтернатива 2</th><th>Кол-во</th><th>Цена</th><th>Сумма</th></tr>
+<tr><td><b>Вентилятор перемешивания</b></td><td>5–10 Вт; дуть вдоль ярусов; цель — 0,3–0,7 м/с над листьями</td><td>вентилятор-клипса 15 см</td><td class="alt">USB-вентилятор + зарядка 5 В</td><td class="alt">компьютерный 120 мм 12 В + блок питания</td><td class="q">2</td><td class="p">≈ 6 000</td><td class="p">≈ 12 000</td></tr>
+<tr><td>Термогигрометр</td><td>цель: 60–70 %, днём 20–22 °C, ночью 17–18 °C</td><td>Xiaomi (уже стоит в погребе)</td><td class="alt">любой цифровой с памятью мин/макс</td><td class="alt">—</td><td class="q">—</td><td class="p"></td><td class="p">есть</td></tr>
+<tr><td colspan="8" class="m"><b>Покупать только если покажут замеры</b> (в сумму не входит):<br>
+• влажность &gt; 75 % несколько суток при вытяжке на максимуме → осушитель бытовой 10–12 л/сут (≈ 50–70 тыс.); альтернативы: отдельная приточная труба с улицы (≈ 6 тыс.); второй вентилятор на вытяжку.<br>
+• ночью в погребе &lt; 14 °C → масляный радиатор 1 кВт с термостатом (≈ 15–20 тыс.); альтернативы: конвектор 0,5–1 кВт с термостатом; нагреватель в бак раствора 100 Вт (≈ 7,5 тыс.).</td></tr>
+</table></div>
+
+<h3><span class="n">8</span>Электрика и защита<span class="s">≈ 70 700</span></h3>
+<div class="tw"><table>
+<tr><th>Позиция</th><th>Требования</th><th>Основной вариант</th><th>Альтернатива 1</th><th>Альтернатива 2</th><th>Кол-во</th><th>Цена</th><th>Сумма</th></tr>
+<tr><td><b>Дифавтомат</b></td><td>16 А, 30 мА, тип А + бокс IP65 (если на линии нет УЗО)</td><td>IEK АВДТ 32</td><td class="alt">ABB DS201 C16 A30</td><td class="alt">Schneider Easy9 АВДТ</td><td class="q">1</td><td class="p">≈ 12 000</td><td class="p">≈ 12 000</td></tr>
+<tr><td><b>ИБП</b></td><td>только насос + компрессоры (≈ 50 Вт), ≥ 1 ч без сети</td><td>Ippon Back Basic 650 — <a href="https://alfa.kz/peripherals/ups/ippon/sort-price-asc">Alfa.kz</a></td><td class="alt">Ippon Back Basic 850 Euro — 21 990 <a href="https://satu.kz/kz/Ups-ippon.html">Satu</a></td><td class="alt">Ippon Back Basic 650S Euro — 26 700 (там же)</td><td class="q">1</td><td class="p">19 720</td><td class="p">19 720</td></tr>
+<tr><td>Таймер розеточный</td><td>16 А; группа 1 — свет стеллажа А + вытяжка, группа 2 — свет стеллажа Б</td><td>цифровой недельный</td><td class="alt">механический суточный</td><td class="alt">Wi-Fi-розетка с учётом энергии</td><td class="q">2</td><td class="p">≈ 4 000</td><td class="p">≈ 8 000</td></tr>
+<tr><td>Ваттметр розеточный</td><td>учёт кВт·ч: свет отдельно, остальное отдельно</td><td>счётчик в розетку 16 А</td><td class="alt">Wi-Fi-розетка с учётом энергии</td><td class="alt">счётчик на DIN-рейку в бокс</td><td class="q">2</td><td class="p">≈ 4 000</td><td class="p">≈ 8 000</td></tr>
+<tr><td>Датчик протечки</td><td>под бак NFT и на пол под стеллажом Б</td><td>автономный с сиреной</td><td class="alt">Wi-Fi с уведомлением на телефон</td><td class="alt">Aqara (нужен хаб)</td><td class="q">2</td><td class="p">≈ 4 000</td><td class="p">≈ 8 000</td></tr>
+<tr><td>Удлинитель с заземлением</td><td>IP44, 4 гнезда, 1,5 мм²; крепить на стену ≥ 1 м от пола</td><td>удлинитель IP44</td><td class="alt">накладные розетки IP44</td><td class="alt">—</td><td class="q">2</td><td class="p">≈ 5 000</td><td class="p">≈ 10 000</td></tr>
+<tr><td>Кабель-каналы, стяжки, крючки, цепочки</td><td></td><td colspan="3" class="alt">любые</td><td class="q">к-т</td><td class="p"></td><td class="p">≈ 5 000</td></tr>
+</table></div>
+
+<h3><span class="n">9</span>Удобрения и контроль раствора<span class="s">≈ 83 800</span></h3>
+<div class="tw"><table>
+<tr><th>Позиция</th><th>Требования</th><th>Основной вариант</th><th>Альтернатива 1</th><th>Альтернатива 2</th><th>Кол-во</th><th>Цена</th><th>Сумма</th></tr>
+<tr><td><b>Удобрение</b></td><td>≈ 1 000 л раствора на цикл</td><td>Terra Aquatica TriPart Set HW 0,5 л — <a href="https://satu.kz/Ghe-grow.html">Satu</a></td><td class="alt">Terra Aquatica DualPart Grow HW 1 л — ≈ 11 700, нужно 2 л</td><td class="alt">кальциевая селитра + комплексное NPK + хелаты (рецепт — у агронома)</td><td class="q">2</td><td class="p">17 700</td><td class="p">35 400</td></tr>
+<tr><td>pH Down</td><td></td><td>Terra Aquatica pH− 0,5 л — <a href="https://satu.kz/kz/Aquatica.html">Satu</a></td><td class="alt">pH− 1 л — 12 300</td><td class="alt">ортофосфорная кислота 85 %</td><td class="q">1</td><td class="p">7 600</td><td class="p">7 600</td></tr>
+<tr><td><b>Тестер</b></td><td>pH, EC, t° с автокомпенсацией</td><td>4 в 1 — <a href="https://satu.kz/Ec-metr.html">Satu</a></td><td class="alt">5 в 1 — 9 683 (там же)</td><td class="alt">ручка TDS/EC 2 500 + pH-метр отдельно</td><td class="q">1</td><td class="p">10 291</td><td class="p">10 291</td></tr>
+<tr><td>Калибровочные растворы</td><td>pH 4,01 и 6,86; EC 1 413</td><td>растворы</td><td class="alt">порошки-буферы</td><td class="alt">—</td><td class="q">к-т</td><td class="p"></td><td class="p">≈ 4 000</td></tr>
+<tr><td>Шприцы 10 и 60 мл, мерный кувшин</td><td></td><td colspan="3" class="alt">аптека, хозмаг</td><td class="q">к-т</td><td class="p"></td><td class="p">≈ 1 500</td></tr>
+<tr><td>Весы</td><td>до 5 кг, шаг 1 г</td><td>кухонные</td><td class="alt">безмен электронный 10 кг</td><td class="alt">—</td><td class="q">1</td><td class="p">≈ 5 000</td><td class="p">≈ 5 000</td></tr>
+<tr><td>Анализ водопроводной воды</td><td>EC, жёсткость, Ca, Mg, Na, Cl</td><td>лаборатория</td><td class="alt">паспорт качества воды у водоканала</td><td class="alt">только замер EC тестером</td><td class="q">1</td><td class="p">20 000</td><td class="p">20 000</td></tr>
+</table></div>
+
+<h3><span class="n">10</span>Посадочный материал<span class="s">≈ 47 700</span></h3>
+<div class="tw"><table>
+<tr><th>Позиция</th><th>Требования</th><th>Основной вариант</th><th>Альтернатива 1</th><th>Альтернатива 2</th><th>Кол-во</th><th>Цена</th><th>Сумма</th></tr>
+<tr><td>Стакан сетчатый 50 мм</td><td>100 мест + запас</td><td>Казгидропоника</td><td class="alt">пластиковый стаканчик с прорезями</td><td class="alt">поролоновый кубик без стакана</td><td class="q">130</td><td class="p">≈ 50</td><td class="p">≈ 6 500</td></tr>
+<tr><td>Минвата, кубики 25–36 мм</td><td></td><td>Казгидропоника</td><td class="alt">мат «Эковер», нарезать</td><td class="alt">кокосовые/торфяные таблетки</td><td class="q">180+</td><td class="p"></td><td class="p">≈ 7 200</td></tr>
+<tr><td>Кассета для рассады с куполом</td><td></td><td>садовый магазин</td><td class="alt">пищевой контейнер с крышкой</td><td class="alt">лоток + плёнка</td><td class="q">2</td><td class="p">≈ 3 000</td><td class="p">≈ 6 000</td></tr>
+<tr><td>Лоток микрозелени 54 × 28</td><td>пара: с отверстиями + без</td><td>садовый магазин</td><td class="alt">рассадный лоток без ячеек</td><td class="alt">пищевые контейнеры 2–3 л</td><td class="q">4 пары</td><td class="p">≈ 2 000</td><td class="p">≈ 8 000</td></tr>
+<tr><td>Семена и севок</td><td>салаты, укроп, кинза, петрушка; горох и редис на микрозелень; лук-севок ≈ 40</td><td>Казгидропоника</td><td class="alt">садовые магазины</td><td class="alt">Kaspi</td><td class="q">к-т</td><td class="p"></td><td class="p">≈ 20 000</td></tr>
+</table></div>
+
+<h2>Часть 2. Схема сборки</h2>
+
+<h3><span class="n">A</span>План погреба — вид сверху</h3>
+<svg viewBox="0 0 620 440" role="img" aria-label="План погреба">
+<defs><pattern id="h" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#2f5d3a" stroke-width="1.2" opacity=".35"/></pattern>
+<marker id="ab" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7z" fill="#1f5fa8"/></marker>
+<marker id="ar" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7z" fill="#9b2c1f"/></marker></defs>
+<rect x="50" y="40" width="502" height="366" fill="none" stroke="#1c2620" stroke-width="4"/>
+<!-- rack A -->
+<rect x="52" y="42" width="366" height="102" fill="url(#h)" stroke="#2f5d3a" stroke-width="2"/>
+<line x1="175" y1="42" x2="175" y2="144" stroke="#2f5d3a"/><line x1="296" y1="42" x2="296" y2="144" stroke="#2f5d3a"/>
+<text x="485" y="88" text-anchor="middle" font-size="9.5" fill="#5d6b61">канистры,</text><text x="485" y="100" text-anchor="middle" font-size="9.5" fill="#5d6b61">место для работы</text>
+<text x="235" y="82" text-anchor="middle" font-size="13" font-weight="600">Стеллаж А</text>
+<text x="235" y="98" text-anchor="middle" font-size="10.5" fill="#5d6b61">≈ 2 150 × 600 — до края лестницы, 3 секции ≈ 725</text>
+<text x="235" y="112" text-anchor="middle" font-size="10.5" fill="#5d6b61">А1 ванны · А2 ванны · А3 рассада</text>
+<!-- tank -->
+<rect x="426" y="318" width="119" height="85" fill="#dfe9dc" stroke="#2f5d3a" stroke-width="2" stroke-dasharray="5 3"/>
+<circle cx="485" cy="356" r="26" fill="#cfe0f2" stroke="#1f5fa8" stroke-width="2"/>
+<text x="485" y="354" text-anchor="middle" font-size="10.5" font-weight="600">бак 60 л</text>
+<text x="485" y="367" text-anchor="middle" font-size="9.5">+ насос</text>
+<text x="485" y="398" text-anchor="middle" font-size="9" fill="#5d6b61">поддон 700 × 500</text>
+<!-- equipment shelf -->
+<rect x="436" y="294" width="110" height="20" fill="#f5e3c8" stroke="#b26b12"/>
+<text x="491" y="308" text-anchor="middle" font-size="9.5">полка на стене, h ≥ 1 м</text>
+<text x="412" y="254" text-anchor="end" font-size="9.5" fill="#5d6b61">над баком: компрессоры, ИБП,</text>
+<text x="412" y="266" text-anchor="end" font-size="9.5" fill="#5d6b61">таймеры, дифавтомат</text>
+<!-- rack B -->
+<rect x="52" y="302" width="366" height="102" fill="url(#h)" stroke="#2f5d3a" stroke-width="2"/><line x1="175" y1="302" x2="175" y2="404" stroke="#2f5d3a"/><line x1="296" y1="302" x2="296" y2="404" stroke="#2f5d3a"/>
+<text x="235" y="342" text-anchor="middle" font-size="13" font-weight="600">Стеллаж Б</text>
+<text x="235" y="358" text-anchor="middle" font-size="10.5" fill="#5d6b61">≈ 2 150 × 600 — до края лестницы, 3 секции ≈ 725</text>
+<text x="235" y="371" text-anchor="middle" font-size="10.5" fill="#5d6b61">Б1 лук/укроп · Б2 трубы NFT + ванна · Б3 микрозелень</text>
+<path d="M185 397 H408" stroke="#9b2c1f" stroke-width="2" marker-end="url(#ar)"/>
+<text x="296" y="391" text-anchor="middle" font-size="9.5" fill="#9b2c1f">уклон NFT 3 % → к баку</text>
+<!-- passage -->
+<line x1="179" y1="150" x2="179" y2="296" stroke="#5d6b61" stroke-dasharray="3 3"/>
+<text x="186" y="262" font-size="11" fill="#5d6b61">проход ≈ 950</text>
+<!-- hatch -->
+<rect x="420" y="170" width="125" height="120" fill="none" stroke="#9b2c1f" stroke-dasharray="6 4" stroke-width="1.5"/>
+<text x="482" y="222" text-anchor="middle" font-size="11" fill="#9b2c1f">люк + лестница</text>
+<text x="482" y="237" text-anchor="middle" font-size="10" fill="#9b2c1f">(по месту)</text>
+<text x="482" y="256" text-anchor="middle" font-size="10" fill="#1f5fa8">приток: решётка в люке</text>
+<!-- exhaust -->
+<circle cx="66" cy="160" r="11" fill="#fff" stroke="#1c2620" stroke-width="2"/>
+<path d="M60 160 h12 M66 154 v12" stroke="#1c2620"/>
+<text x="84" y="164" font-size="10" stroke="#fbfaf5" stroke-width="3" paint-order="stroke">вытяжка: колено Ø110 из торцевой стены, напротив люка</text>
+<!-- airflow -->
+<path d="M420 235 C 330 235, 160 250, 80 175" fill="none" stroke="#1f5fa8" stroke-dasharray="2 4" stroke-width="1.6" marker-end="url(#ab)"/>
+<!-- clip fans -->
+<rect x="300" y="146" width="14" height="10" fill="#1c2620"/><text x="318" y="155" font-size="9" fill="#5d6b61">вентилятор-клипса</text>
+<rect x="70" y="290" width="14" height="10" fill="#1c2620"/><text x="88" y="298" font-size="9" fill="#5d6b61">вентилятор-клипса</text>
+<!-- dims -->
+<text x="301" y="430" text-anchor="middle" font-size="11" fill="#5d6b61">2 950</text><text x="300" y="296" text-anchor="middle" font-size="10" fill="#5d6b61">длина ≈ 2 150 (по месту)</text>
+<text x="34" y="223" font-size="11" fill="#5d6b61" transform="rotate(-90 34 223)" text-anchor="middle">2 150</text>
+<text x="235" y="34" text-anchor="middle" font-size="10" fill="#5d6b61">≈ 2 150</text>
+</svg>
+<div class="m">Бак — у торца стеллажа Б со стороны лестницы, на свободном полу; к этому торцу направлен уклон труб NFT. Третья секция у обоих стеллажей наращивается. Свободный угол у стеллажа А — под канистры и работу с раствором. Воздух идёт от люка через весь погреб к вытяжке у противоположной стены. Размеры в мм.</div>
+
+<h3><span class="n">Б</span>Ярус с трубами NFT — вид спереди (стеллаж Б, две секции у бака)</h3>
+<div class="m">Рисунок показывает, как устроены ярусы: внизу ванны, посередине трубы с уклоном к баку, наверху лотки. Трубы стоят на среднем ярусе стеллажа Б, в двух секциях рядом с баком. В третьей секции этого яруса и на среднем ярусе стеллажа А — ванны, как внизу.</div>
+<svg viewBox="0 0 640 560" role="img" aria-label="Ярус с трубами NFT, вид спереди">
+<defs><marker id="b1" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7z" fill="#1f5fa8"/></marker></defs>
+<line x1="20" y1="45" x2="630" y2="45" stroke="#1c2620" stroke-width="2"/><text x="628" y="40" text-anchor="end" font-size="10" fill="#5d6b61">потолок 1 900</text>
+<line x1="20" y1="520" x2="630" y2="520" stroke="#1c2620" stroke-width="3"/><text x="22" y="536" font-size="10" fill="#5d6b61">пол 0</text>
+<g stroke="#2f5d3a" stroke-width="5"><line x1="60" y1="60" x2="60" y2="520"/><line x1="285" y1="60" x2="285" y2="520"/><line x1="510" y1="60" x2="510" y2="520"/></g>
+<g stroke="#2f5d3a" stroke-width="6"><line x1="56" y1="470" x2="514" y2="470"/><line x1="56" y1="330" x2="514" y2="330"/><line x1="56" y1="190" x2="514" y2="190"/><line x1="56" y1="62" x2="514" y2="62"/></g>
+<g font-size="10" fill="#5d6b61"><text x="52" y="474" text-anchor="end">200</text><text x="52" y="334" text-anchor="end">760</text><text x="52" y="194" text-anchor="end">1 320</text></g>
+<text x="172" y="512" text-anchor="middle" font-size="10" fill="#5d6b61">750</text><text x="397" y="512" text-anchor="middle" font-size="10" fill="#5d6b61">750</text>
+<!-- A1 tubs -->
+<rect x="70" y="430" width="205" height="40" fill="#2a2a2a"/><rect x="295" y="430" width="205" height="40" fill="#2a2a2a"/>
+<rect x="73" y="438" width="199" height="26" fill="#3b78b8" opacity=".6"/><rect x="298" y="438" width="199" height="26" fill="#3b78b8" opacity=".6"/>
+<rect x="75" y="430" width="195" height="8" fill="#e8e3d0"/><rect x="300" y="430" width="195" height="8" fill="#e8e3d0"/>
+<g fill="#4f9a4a"><ellipse cx="97" cy="420" rx="18" ry="11"/><ellipse cx="146" cy="420" rx="18" ry="11"/><ellipse cx="196" cy="420" rx="18" ry="11"/><ellipse cx="245" cy="420" rx="18" ry="11"/><ellipse cx="322" cy="420" rx="18" ry="11"/><ellipse cx="371" cy="420" rx="18" ry="11"/><ellipse cx="421" cy="420" rx="18" ry="11"/><ellipse cx="470" cy="420" rx="18" ry="11"/></g>
+<text x="172" y="458" text-anchor="middle" font-size="10" fill="#fff">ванна DWC 30 л</text><text x="397" y="458" text-anchor="middle" font-size="10" fill="#fff">ванна DWC 30 л</text>
+<text x="285" y="490" text-anchor="middle" font-size="10" fill="#9b2c1f" font-weight="600" stroke="#fbfaf5" stroke-width="3" paint-order="stroke">ванны — строго по уровню ± 2 мм</text>
+<!-- lamps A1 -->
+<rect x="70" y="337" width="430" height="7" fill="#b26b12"/>
+<g fill="#f6d27a" opacity=".3"><path d="M70 344 L64 405 H506 L500 344z"/></g>
+<text x="285" y="358" text-anchor="middle" font-size="10" stroke="#fbfaf5" stroke-width="3" paint-order="stroke">4 × LED 36 Вт под полкой, вдоль стеллажа</text>
+
+<!-- NFT A2 (exaggerated slope) -->
+<polygon points="66,290 520,310 520,326 66,306" fill="#d9d9d9" stroke="#1c2620" stroke-width="1.5"/>
+<g fill="#4f9a4a"><ellipse cx="98" cy="282" rx="13" ry="9"/><ellipse cx="160" cy="285" rx="13" ry="9"/><ellipse cx="222" cy="288" rx="13" ry="9"/><ellipse cx="284" cy="290" rx="13" ry="9"/><ellipse cx="346" cy="293" rx="13" ry="9"/><ellipse cx="408" cy="296" rx="13" ry="9"/><ellipse cx="470" cy="299" rx="13" ry="9"/></g>
+<rect x="66" y="306" width="10" height="24" fill="#8c7d5a"/><text x="80" y="326" font-size="9" fill="#8c7d5a" stroke="#fbfaf5" stroke-width="3" paint-order="stroke">подкладка 42 мм</text>
+<text x="300" y="320" text-anchor="middle" font-size="9.5" stroke="#fbfaf5" stroke-width="3" paint-order="stroke">3 трубы Ø110 × 1 400, уклон 3 % (42 мм) → к баку</text>
+<text x="66" y="282" font-size="9" fill="#1f5fa8">вход</text>
+<!-- lamps A2 -->
+<rect x="70" y="197" width="430" height="7" fill="#b26b12"/>
+<g fill="#f6d27a" opacity=".3"><path d="M70 204 L64 272 H506 L500 204z"/></g>
+<text x="285" y="218" text-anchor="middle" font-size="10" stroke="#fbfaf5" stroke-width="3" paint-order="stroke">5 × LED 36 Вт</text>
+<!-- A3 -->
+<rect x="75" y="172" width="195" height="18" fill="#d9cfb4" stroke="#8c7d5a"/><rect x="300" y="172" width="195" height="18" fill="#d9cfb4" stroke="#8c7d5a"/>
+<text x="172" y="185" text-anchor="middle" font-size="9.5">рассада под куполом</text><text x="397" y="185" text-anchor="middle" font-size="9.5">микрозелень</text>
+<rect x="70" y="100" width="430" height="6" fill="#8c8c8c"/>
+<line x1="150" y1="62" x2="150" y2="100" stroke="#8c8c8c" stroke-dasharray="2 2"/><line x1="420" y1="62" x2="420" y2="100" stroke="#8c8c8c" stroke-dasharray="2 2"/>
+<text x="285" y="96" text-anchor="middle" font-size="9.5" fill="#5d6b61" stroke="#fbfaf5" stroke-width="3" paint-order="stroke">2 × LED 36 Вт на цепочках, 250–350 мм над лотками</text>
+<!-- return + tank -->
+<rect x="515" y="306" width="22" height="26" fill="none" stroke="#9b2c1f" stroke-width="2"/>
+<path d="M526 332 V420 L552 440" fill="none" stroke="#9b2c1f" stroke-width="3"/>
+<text x="530" y="404" font-size="9.5" fill="#9b2c1f" stroke="#fbfaf5" stroke-width="3" paint-order="stroke">возврат Ø50,</text><text x="530" y="417" font-size="9.5" fill="#9b2c1f" stroke="#fbfaf5" stroke-width="3" paint-order="stroke">уклон ≥ 2 %</text>
+<rect x="540" y="510" width="90" height="10" fill="#dfe9dc" stroke="#2f5d3a"/>
+<rect x="548" y="440" width="74" height="70" fill="#cfe0f2" stroke="#1f5fa8" stroke-width="2"/>
+<text x="585" y="470" text-anchor="middle" font-size="10.5" font-weight="600">бак 60 л</text>
+<rect x="556" y="488" width="20" height="18" fill="#1c2620"/><text x="582" y="502" font-size="9">насос</text>
+<text x="585" y="534" text-anchor="middle" font-size="9" fill="#5d6b61">поддон + датчик протечки</text>
+<!-- supply -->
+<path d="M566 488 V255 H70 V290" fill="none" stroke="#1f5fa8" stroke-width="3"/>
+<circle cx="566" cy="300" r="5" fill="#fff" stroke="#1f5fa8" stroke-width="2"/>
+<path d="M571 300 h14 v140" fill="none" stroke="#1f5fa8" stroke-width="2" stroke-dasharray="3 2"/>
+<text x="590" y="296" font-size="9.5" fill="#1f5fa8">байпас</text>
+<text x="300" y="250" text-anchor="middle" font-size="9.5" fill="#1f5fa8" stroke="#fbfaf5" stroke-width="3" paint-order="stroke">подача 16 мм, кран на каждый канал, 1–2 л/мин</text>
+<text x="20" y="555" font-size="9.5" fill="#5d6b61">Уклон NFT на рисунке показан с преувеличением. Размеры в мм.</text>
+</svg>
+
+<h3><span class="n">В</span>Стеллаж с трубами — вид сбоку (с торца), глубина 600</h3>
+<svg viewBox="0 0 640 520" role="img" aria-label="Стеллаж с трубами, вид сбоку">
+<line x1="20" y1="35" x2="630" y2="35" stroke="#1c2620" stroke-width="2"/><text x="628" y="30" text-anchor="end" font-size="10" fill="#5d6b61">потолок 1 900</text>
+<line x1="20" y1="495" x2="630" y2="495" stroke="#1c2620" stroke-width="3"/><text x="628" y="510" text-anchor="end" font-size="10" fill="#5d6b61">пол 0</text>
+<rect x="120" y="35" width="14" height="460" fill="#c9c2ad"/><text x="112" y="270" font-size="10" fill="#5d6b61" transform="rotate(-90 112 270)" text-anchor="middle">стена</text>
+<g stroke="#2f5d3a" stroke-width="5"><line x1="140" y1="45" x2="140" y2="495"/><line x1="440" y1="45" x2="440" y2="495"/></g>
+<g stroke="#2f5d3a" stroke-width="6"><line x1="136" y1="445" x2="444" y2="445"/><line x1="136" y1="305" x2="444" y2="305"/><line x1="136" y1="165" x2="444" y2="165"/><line x1="136" y1="47" x2="444" y2="47"/></g>
+<g font-size="10" fill="#5d6b61"><text x="452" y="449">200</text><text x="452" y="309">760</text><text x="452" y="169">1 320</text></g>
+<text x="290" y="488" text-anchor="middle" font-size="10" fill="#5d6b61">600</text>
+<!-- DWC section -->
+<rect x="148" y="402" width="285" height="43" fill="#8c7d5a"/>
+<rect x="154" y="402" width="273" height="40" fill="#2a2a2a"/>
+<rect x="156" y="432" width="269" height="8" fill="#e8e3d0"/>
+<rect x="156" y="410" width="269" height="22" fill="#3b78b8" opacity=".6"/>
+<rect x="158" y="403" width="265" height="8" fill="#e8e3d0" stroke="#8c7d5a"/>
+<g fill="#4f9a4a"><ellipse cx="225" cy="392" rx="30" ry="12"/><ellipse cx="355" cy="392" rx="30" ry="12"/></g>
+<g fill="#fff"><circle cx="210" cy="438" r="3"/><circle cx="290" cy="438" r="3"/><circle cx="370" cy="438" r="3"/></g>
+<g font-size="9" fill="#1c2620"><text x="482" y="400">плот ЭППС 30 со стаканчиками</text><text x="482" y="415">раствор 100 мм</text><text x="482" y="430">ЭППС 30 на дне, распылитель</text><text x="482" y="458">плёнка 2 слоя, OSB 9 + борт 150</text></g>
+<g stroke="#5d6b61" stroke-width=".8"><line x1="425" y1="398" x2="466" y2="398"/><line x1="425" y1="420" x2="466" y2="413"/><line x1="425" y1="436" x2="466" y2="428"/><line x1="433" y1="444" x2="478" y2="455"/></g>
+<!-- lamps A1 -->
+<g fill="#b26b12"><rect x="160" y="311" width="22" height="7"/><rect x="230" y="311" width="22" height="7"/><rect x="300" y="311" width="22" height="7"/><rect x="370" y="311" width="22" height="7"/></g>
+<text x="290" y="333" text-anchor="middle" font-size="9.5">4 светильника, шаг ≈ 140 мм</text>
+<!-- NFT pipes -->
+<g fill="#d9d9d9" stroke="#1c2620" stroke-width="1.5"><circle cx="190" cy="289" r="14"/><circle cx="290" cy="289" r="14"/><circle cx="390" cy="289" r="14"/></g>
+<g fill="#4f9a4a"><ellipse cx="190" cy="268" rx="22" ry="10"/><ellipse cx="290" cy="268" rx="22" ry="10"/><ellipse cx="390" cy="268" rx="22" ry="10"/></g>
+<g fill="none" stroke="#5d6b61"><path d="M190 255 v-0"/></g>
+<line x1="190" y1="300" x2="290" y2="300" stroke="#9b2c1f"/><text x="240" y="298" text-anchor="middle" font-size="9" fill="#9b2c1f">200</text>
+<line x1="290" y1="300" x2="390" y2="300" stroke="#9b2c1f"/><text x="340" y="298" text-anchor="middle" font-size="9" fill="#9b2c1f">200</text>
+<text x="482" y="282" font-size="9">оси труб: 100 / 300 / 500 мм</text>
+<!-- lamps A2 -->
+<g fill="#b26b12"><rect x="150" y="171" width="22" height="7"/><rect x="210" y="171" width="22" height="7"/><rect x="270" y="171" width="22" height="7"/><rect x="330" y="171" width="22" height="7"/><rect x="390" y="171" width="22" height="7"/></g>
+<text x="290" y="193" text-anchor="middle" font-size="9.5">5 светильников, шаг ≈ 120 мм</text>
+<!-- A3 -->
+<rect x="150" y="150" width="280" height="15" fill="#d9cfb4" stroke="#8c7d5a"/>
+<g fill="#8c8c8c"><rect x="200" y="85" width="22" height="6"/><rect x="360" y="85" width="22" height="6"/></g>
+<line x1="211" y1="47" x2="211" y2="85" stroke="#8c8c8c" stroke-dasharray="2 2"/><line x1="371" y1="47" x2="371" y2="85" stroke="#8c8c8c" stroke-dasharray="2 2"/>
+<text x="290" y="110" text-anchor="middle" font-size="9.5" fill="#5d6b61">2 светильника на цепочках</text>
+<!-- dimension lamp-canopy -->
+<line x1="500" y1="178" x2="500" y2="258" stroke="#5d6b61"/><text x="506" y="225" font-size="9.5" fill="#5d6b61">≥ 150 до листьев</text>
+<line x1="500" y1="318" x2="500" y2="380" stroke="#5d6b61"/><text x="506" y="355" font-size="9.5" fill="#5d6b61">≥ 150 до листьев</text>
+</svg>
+
+<h3><span class="n">Г</span>Вентиляция — разрез</h3>
+<svg viewBox="0 0 640 320" role="img" aria-label="Вентиляция">
+<defs><marker id="v1" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7z" fill="#1f5fa8"/></marker></defs>
+<rect x="20" y="40" width="460" height="18" fill="#c9c2ad"/><text x="250" y="53" text-anchor="middle" font-size="10">перекрытие</text>
+<rect x="480" y="40" width="30" height="270" fill="#c9c2ad"/><text x="497" y="190" font-size="10" transform="rotate(-90 497 190)" text-anchor="middle">торцевая стена (напротив люка)</text>
+<line x1="20" y1="300" x2="480" y2="300" stroke="#1c2620" stroke-width="3"/><text x="30" y="315" font-size="10" fill="#5d6b61">пол погреба</text>
+<line x1="510" y1="40" x2="630" y2="40" stroke="#7a6b4a" stroke-width="2"/><text x="560" y="56" font-size="10" fill="#5d6b61">плитка</text>
+<!-- pipe through wall and up outside -->
+<path d="M440 92 H530 V0" fill="none" stroke="#1c2620" stroke-width="24" stroke-linejoin="round"/>
+<path d="M440 92 H530 V0" fill="none" stroke="#e0e0e0" stroke-width="20" stroke-linejoin="round"/>
+<path d="M440 92 V120" stroke="#1c2620" stroke-width="24"/><path d="M440 92 V120" stroke="#e0e0e0" stroke-width="20"/>
+<rect x="516" y="0" width="28" height="6" fill="#9b9b9b"/>
+<text x="508" y="14" font-size="9.5" text-anchor="end">снаружи: выход нарастить на 400–600 мм, сетка ≥ 10 мм</text>
+<rect x="426" y="120" width="28" height="10" fill="#555"/><text x="420" y="130" font-size="9.5" text-anchor="end">обратный клапан</text>
+<rect x="420" y="130" width="40" height="26" fill="#b26b12"/><text x="414" y="148" font-size="9.5" text-anchor="end">вентилятор Ø100 + регулятор — на выход колена</text>
+<path d="M440 182 V160" stroke="#1f5fa8" stroke-width="2" marker-end="url(#v1)"/>
+<rect x="429" y="200" width="22" height="100" fill="none" stroke="#9b2c1f" stroke-dasharray="4 3"/>
+<text x="420" y="240" font-size="9.5" fill="#9b2c1f" text-anchor="end">отдельный кусок трубы на полу — убрать</text>
+<!-- hatch -->
+<rect x="40" y="40" width="90" height="18" fill="#fff" stroke="#1f5fa8" stroke-width="2"/><text x="85" y="53" text-anchor="middle" font-size="9.5">люк + решётка</text>
+<path d="M85 66 C 100 230, 300 240, 425 170" fill="none" stroke="#1f5fa8" stroke-width="1.6" stroke-dasharray="3 4" marker-end="url(#v1)"/>
+<text x="220" y="268" text-anchor="middle" font-size="10" fill="#1f5fa8">воздух из дома → через ярусы → вытяжка</text>
+</svg>
+
+<h2>Часть 3. На что обратить внимание при сборке</h2>
+<ol class="crit">
+<li><b>Нагрузка на полки.</b> Ванна с раствором весит ≈ 40 кг: на ярусе по 3 ванны (≈ 120 кг) + светильники. Полки должны держать ≥ 130 кг без прогиба. Существующие деревянные полки проверить и усилить (поперечины, подпорки по центру).</li>
+<li><b>Оба стеллажа</b> продлить до края лестницы, оставив ≥ 10 см до неё. Третья секция — с тем же шагом полок 200 / 760 / 1320 и просветом ≥ 670 мм под ванну.</li>
+<li><b>Ванны DWC — строго горизонтально</b>, ± 2 мм по уровню в обе стороны. Перекос — один край корней без раствора.</li>
+<li><b>Уклон NFT — 3 %:</b> вход выше выхода на 42 мм на 1,4 м. Опоры под трубами через 50 см, без провисов. Выход — над приёмным лотком возврата, со стороны бака.</li>
+<li><b>Возврат Ø 50 — уклон не меньше 2 %</b> (2 см на метр) к баку, без «горбов» и петель. Бак всегда ниже выхода каналов.</li>
+<li><b>Проверка на воде до посадки — 48 ч:</b> нет протечек; расход в каждом канале 1–2 л/мин (замер мерной кружкой за 1 мин, выравнивать кранами); при выключении сети насос и компрессоры работают от ИБП.</li>
+<li><b>Отверстия в трубах NFT и в плотах</b> — по диаметру корпуса стаканчика, стаканчик держится на ободке. Опилки из труб вымыть.</li>
+<li><b>Всё из пластика, что касается раствора,</b> — непрозрачное (на свету растут водоросли). Баки — с крышками.</li>
+<li><b>Компрессоры</b> — на полке выше уровня воды; на каждом шланге — обратный клапан.</li>
+<li><b>Электрика:</b> вся линия — через дифавтомат 30 мА; розетки и удлинители — на стене ≥ 1 м от пола; кабели с петлёй вниз перед розеткой (вода не стечёт по кабелю); ничего электрического на полу; светильники над водой — IP65 или выше раствора не менее 30 см.</li>
+<li><b>Светильники</b> — вдоль стеллажа, крепить к низу вышестоящей полки, расстояние до верхушек растений не меньше 150 мм. Две группы на таймерах: стеллаж А (+ вытяжка), стеллаж Б. Свет 16 ч, темнота 8 ч.</li>
+<li><b>Вытяжка</b> — вентилятор на выходе существующего колена Ø 110 у торцевой стены (напротив люка), забор под потолком; отдельный кусок трубы, стоящий под коленом на полу, убрать; обратный клапан после вентилятора; снаружи выход поднять от снега.</li>
+<li><b>Датчики протечки</b> — под баком и на полу под стеллажом Б.</li>
+</ol>
+
+</div><div class="gtfoot"><a href="./" data-gtback>← Назад к шагам</a></div><script>
+(function(){
+  function back(e){
+    var same = false; try { same = document.referrer && new URL(document.referrer).origin === location.origin; } catch (x) {}
+    if (same && history.length > 1) { e.preventDefault(); history.back(); }
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('[data-gtback]'), function(a){ a.addEventListener('click', back); });
+})();
+</script></body></html>

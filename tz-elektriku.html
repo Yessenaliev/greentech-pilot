@@ -1,0 +1,129 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><title>ТЗ электрику: погреб</title><style>html{-webkit-text-size-adjust:100%}body{margin:0;font:14px system-ui}img{max-width:100%}[hidden]{display:none!important}</style><style>
+.gtbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:6px;padding:8px max(12px,env(safe-area-inset-right,0px)) 8px max(12px,env(safe-area-inset-left,0px));padding-top:calc(8px + env(safe-area-inset-top,0px));background:#14232b;color:#fff;font:600 14px/1 "Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
+.gtbar a{flex:none;display:inline-flex;align-items:center;min-height:40px;padding:0 12px;border-radius:9px;color:#d7e3e8;text-decoration:none;border:1px solid transparent}
+.gtbar a:hover{border-color:#3d525c;color:#fff}
+.gtbar a[aria-current="page"]{background:#24404b;color:#fff}
+.gtbar a.gtback{background:#4fd1c5;color:#06231f;font-weight:700;margin-right:6px}
+.gtbar a:focus-visible{outline:3px solid #6cb6f5;outline-offset:2px}
+.gtfoot{max-width:1040px;margin:0 auto;padding:8px 16px 40px}
+.gtfoot a{display:inline-flex;align-items:center;min-height:46px;padding:0 18px;border-radius:10px;background:#14232b;color:#fff;text-decoration:none;font:700 15px "Golos Text",system-ui,sans-serif}
+@media print{.gtbar,.gtfoot{display:none}}
+</style></head><body><nav class="gtbar" aria-label="Страницы пилота"><a class="gtback" href="./" data-gtback>← Назад</a><a href="./">Шаги</a><a href="instrukciya.html">Инструкция</a><a href="pokupki.html">Что докупить</a><a href="tz-elektriku.html" aria-current="page">ТЗ электрику</a><a href="zakupka.html">Закупка и сборка</a><a href="spisok.html">Список закупки</a></nav><meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Раскладка: одностраничное задание — объект, нагрузки, что осмотреть, что смонтировать, что сдать */
+:root{
+  --bg:#f3f6f7; --surface:#ffffff; --ink:#14232b; --mut:#586a73; --line:#d3dde2;
+  --accent:#0f766e; --water:#1d6fb8; --bad:#b3261e; --soft:#e7eef0;
+  --font:"Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0e1619; --surface:#162126; --ink:#e6eef1; --mut:#93a4ad; --line:#2a3a41; --accent:#4fd1c5; --water:#6cb6f5; --bad:#f2776b; --soft:#1c2a30; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#0e1619; --surface:#162126; --ink:#e6eef1; --mut:#93a4ad; --line:#2a3a41; --accent:#4fd1c5; --water:#6cb6f5; --bad:#f2776b; --soft:#1c2a30; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.5 var(--font)}
+.wrap{max-width:900px;margin:0 auto;padding-block:22px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:14px}
+.k{font:600 12px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+h1{font-size:clamp(24px,4.4vw,34px);line-height:1.1;margin:6px 0 4px;font-weight:700;text-wrap:balance}
+h2{font-size:19px;line-height:1.2;margin:18px 0 0;padding-top:14px;border-top:2px solid var(--ink)}
+p{margin:0;max-width:72ch} .mut{color:var(--mut)} .sm{font-size:13.5px}
+.note{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:6px;padding:10px 12px}
+.tw{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:620px;font-size:13.5px}
+th{text-align:left;font:600 12px var(--mono);color:var(--mut);background:var(--soft);padding:8px 10px;border-bottom:1px solid var(--line)}
+td{padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.c{font:600 13px var(--mono);white-space:nowrap}
+ol,ul{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:6px;max-width:76ch}
+.fig{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow-x:auto}
+.fig svg{display:block;width:100%;min-width:560px;height:auto}
+svg text{font-family:var(--font);fill:var(--ink)}
+.s-wall{fill:none;stroke:var(--ink);stroke-width:4}
+.s-rack{fill:var(--soft);stroke:var(--accent);stroke-width:2}
+.s-tank{fill:var(--soft);stroke:var(--water);stroke-width:2}
+.s-dash{fill:none;stroke:var(--mut);stroke-width:1.5;stroke-dasharray:6 4}
+.s-el{fill:var(--bad)}
+.t-m{fill:var(--mut);font-size:11px}
+.m-t{fill:var(--surface);font:600 10.5px var(--mono);text-anchor:middle}
+</style>
+
+<div class="wrap">
+<div>
+  <div class="k">Задание электрику · редакция 20.11.2026</div>
+  <h1>Электроснабжение гидропонной установки в погребе</h1>
+  <p class="mut">Погреб 2,95 × 2,15 м, высота 1,90 м, вход через люк с лестницей. В погребе два стеллажа с ваннами и баком: всего около 360 л воды, влажность воздуха 60–70 % и выше.</p>
+</div>
+
+<div class="note"><b>Помещение сырое, с открытой водой.</b> Вся установка питается только через устройство защитного отключения 30 мА. Розетки, удлинители и блоки питания — на стене не ниже 1 м от пола. На полу нет ничего электрического.</div>
+
+<h2>1. Нагрузки</h2>
+<div class="tw"><table>
+<tr><th>Потребитель</th><th>Мощность</th><th>Режим</th></tr>
+<tr><td>Светильники линейные LED 36 Вт (1200 мм) и 18 Вт (600 мм), под полками стеллажей</td><td class="c">0,7 кВт на запуске,<br>до 1,1 кВт позже</td><td>16–18 часов в сутки, по таймеру</td></tr>
+<tr><td>Насос погружной в баке и пять воздушных компрессоров</td><td class="c">≈ 50 Вт</td><td>круглосуточно, через ИБП</td></tr>
+<tr><td>Вентилятор вытяжки Ø 100 с регулятором скорости</td><td class="c">по паспорту</td><td>вместе со светом</td></tr>
+<tr><td>Два вентилятора перемешивания, камеры, зарядки датчиков</td><td class="c">≈ 40 Вт</td><td>круглосуточно</td></tr>
+<tr><td>Резерв: обогреватель с термостатом или осушитель воздуха</td><td class="c">до 1 кВт</td><td>возможно позже, по результатам замеров</td></tr>
+<tr><td><b>Расчётная нагрузка</b></td><td class="c"><b>до 2,5 кВт</b></td><td>одна линия 16 А</td></tr>
+</table></div>
+
+<h2>2. Осмотреть и сообщить</h2>
+<ol>
+  <li>Откуда запитан погреб: отдельная линия от щита или общая с другими помещениями. Что ещё висит на этой линии.</li>
+  <li>Автомат на линии: номинал и тип.</li>
+  <li>Есть ли УЗО или дифавтомат: ток утечки, тип, исправность по кнопке «Тест».</li>
+  <li>Кабель: материал, сечение, примерная длина от щита, состояние изоляции и соединений.</li>
+  <li>Есть ли защитный проводник (заземление) и доходит ли он до погреба.</li>
+  <li>Что уже стоит в погребе: розетки, светильник, выключатель — и в каком состоянии.</li>
+  <li>Вывод: выдержит ли линия 2,5 кВт длительно или нужна новая.</li>
+</ol>
+
+<h2>3. Смонтировать</h2>
+<div class="fig">
+<svg viewBox="0 0 640 440" role="img" aria-label="План погреба: место щитка и розеток">
+  <rect class="s-wall" x="50" y="40" width="502" height="366"></rect>
+  <rect class="s-rack" x="52" y="42" width="366" height="102"></rect>
+  <text x="235" y="90" text-anchor="middle" font-size="13" font-weight="600">Стеллаж А</text><text class="t-m" x="235" y="106" text-anchor="middle">≈ 2 150 × 600, три яруса</text>
+  <rect class="s-tank" x="424" y="322" width="119" height="80" rx="6"></rect>
+  <text x="483" y="360" text-anchor="middle" font-size="12" font-weight="600">бак 60 л</text><text class="t-m" x="483" y="376" text-anchor="middle">насос</text>
+  <rect class="s-rack" x="52" y="302" width="366" height="102"></rect>
+  <text x="235" y="350" text-anchor="middle" font-size="13" font-weight="600">Стеллаж Б</text><text class="t-m" x="235" y="366" text-anchor="middle">≈ 2 150 × 600, три яруса</text>
+  <rect class="s-dash" x="420" y="170" width="125" height="120"></rect><text class="t-m" x="482" y="234" text-anchor="middle">люк и лестница</text>
+  <circle class="s-dash" cx="66" cy="165" r="11"></circle><text class="t-m" x="82" y="190">вытяжка Ø 110: вентилятор</text>
+  <rect class="s-el" x="438" y="296" width="108" height="20" rx="3"></rect><text class="m-t" x="492" y="310">ЩИТОК И ПОЛКА</text>
+  <text class="t-m" x="408" y="270" text-anchor="end">щиток — на стене над баком, не ниже 1 м от пола</text>
+  <text class="t-m" x="408" y="286" text-anchor="end">розетки групп 1–3, ИБП</text>
+  <text class="t-m" x="301" y="430" text-anchor="middle">2 950 мм</text><text class="t-m" x="34" y="223" transform="rotate(-90 34 223)" text-anchor="middle">2 150 мм</text>
+</svg>
+</div>
+<ol>
+  <li><b>Защита.</b> Дифавтомат 16 А, 30 мА, тип А в боксе IP65 на стене над баком — бак стоит у стеллажа Б, в свободном углу со стороны лестницы. Если на линии уже стоит исправное УЗО 30 мА — согласовать, нужен ли второй.</li>
+  <li><b>Группа 1 — свет.</b> Две розетки IP44 с заземлением под розеточные таймеры: первая — светильники стеллажа А и вентилятор вытяжки, вторая — светильники стеллажа Б.</li>
+  <li><b>Группа 2 — насос и компрессоры.</b> Одна розетка IP44 под ИБП. Без таймера и без выключателя, который можно задеть случайно.</li>
+  <li><b>Группа 3 — постоянные.</b> Блок из четырёх розеток IP44: вентиляторы перемешивания, камеры, зарядки. Плюс две розетки запаса.</li>
+  <li><b>Светильники.</b> Питание каждого яруса — отдельным шнуром с вилкой, чтобы ярус можно было отключить, не трогая остальные. Соединения — выше уровня воды в ваннах.</li>
+  <li><b>Вытяжка.</b> Подключить канальный вентилятор Ø 100 через регулятор скорости.</li>
+  <li><b>Защита насоса от сухого хода.</b> Поплавковый выключатель в баке в разрыв питания насоса либо насос со встроенной защитой — на ваше усмотрение.</li>
+  <li><b>Прокладка.</b> Кабели в кабель-канале по стене; перед каждой розеткой петля вниз, чтобы вода не стекала по кабелю в розетку. Ничего не крепить к деревянным бортам ванн.</li>
+  <li><b>Маркировка.</b> Подписать розетки: «свет А», «свет Б», «ИБП», «постоянные».</li>
+</ol>
+
+<h2>4. Сдать</h2>
+<ul>
+  <li>Ответы по пунктам раздела 2 — коротко, текстом.</li>
+  <li>Проверка срабатывания дифавтомата кнопкой «Тест» при нас.</li>
+  <li>Фото щитка и розеток после монтажа.</li>
+  <li>Схема от руки: что к какой розетке подключено.</li>
+</ul>
+<p class="sm mut">Способ выполнения, марки кабеля и аппаратов — на усмотрение электрика, по действующим правилам. Водопровод и отопление в погреб не заводятся.</p>
+</div>
+<div class="gtfoot"><a href="./" data-gtback>← Назад к шагам</a></div><script>
+(function(){
+  function back(e){
+    var same = false; try { same = document.referrer && new URL(document.referrer).origin === location.origin; } catch (x) {}
+    if (same && history.length > 1) { e.preventDefault(); history.back(); }
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('[data-gtback]'), function(a){ a.addEventListener('click', back); });
+})();
+</script></body></html>
